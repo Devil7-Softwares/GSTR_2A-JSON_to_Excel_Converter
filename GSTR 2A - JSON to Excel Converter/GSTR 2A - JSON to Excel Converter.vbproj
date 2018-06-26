@@ -63,6 +63,9 @@
     <Reference Include="DotNetZip">
       <HintPath>..\dll\DotNetZip.dll</HintPath>
     </Reference>
+    <Reference Include="HtmlAgilityPack">
+      <HintPath>..\dll\HtmlAgilityPack.dll</HintPath>
+    </Reference>
     <Reference Include="Newtonsoft.Json">
       <HintPath>..\dll\Newtonsoft.Json.dll</HintPath>
     </Reference>
@@ -102,6 +105,12 @@
     <Compile Include="frm_Splash.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="frm_Wait.designer.vb">
+      <DependentUpon>frm_Wait.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frm_Wait.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="JSON.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
@@ -119,6 +128,7 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
     <Compile Include="Objects.vb" />
+    <Compile Include="TaxPayersDatabase.vb" />
     <Compile Include="XtraFormTemp.vb">
       <SubType>Form</SubType>
     </Compile>
@@ -129,6 +139,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frm_Splash.resx">
       <DependentUpon>frm_Splash.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_Wait.resx">
+      <DependentUpon>frm_Wait.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\licenses.licx" />
     <EmbeddedResource Include="My Project\Resources.resx">

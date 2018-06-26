@@ -23,6 +23,7 @@ Partial Class frm_Main
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frm_Main))
+        Me.WaitFormManager = New DevExpress.XtraSplashScreen.SplashScreenManager(Me, GetType(Global.D7Automation.frm_Wait), True, True)
         Me.grp_Controls = New DevExpress.XtraEditors.GroupControl()
         Me.btn_Export2Excel = New DevExpress.XtraEditors.SimpleButton()
         Me.btn_ReadJson = New DevExpress.XtraEditors.SimpleButton()
@@ -31,6 +32,7 @@ Partial Class frm_Main
         Me.saveExcel = New System.Windows.Forms.SaveFileDialog()
         Me.grd_Json = New DevExpress.XtraGrid.GridControl()
         Me.gv_Json = New DevExpress.XtraGrid.Views.Grid.GridView()
+        Me.Reader = New System.ComponentModel.BackgroundWorker()
         CType(Me.grp_Controls, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.grp_Controls.SuspendLayout()
         CType(Me.grp_JsonFiles, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -38,6 +40,10 @@ Partial Class frm_Main
         CType(Me.grd_Json, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.gv_Json, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
+        '
+        'WaitFormManager
+        '
+        Me.WaitFormManager.ClosingDelay = 500
         '
         'grp_Controls
         '
@@ -142,5 +148,7 @@ Partial Class frm_Main
     Friend WithEvents saveExcel As System.Windows.Forms.SaveFileDialog
     Friend WithEvents grd_Json As DevExpress.XtraGrid.GridControl
     Friend WithEvents gv_Json As DevExpress.XtraGrid.Views.Grid.GridView
+    Friend WithEvents WaitFormManager As DevExpress.XtraSplashScreen.SplashScreenManager
+    Friend WithEvents Reader As System.ComponentModel.BackgroundWorker
 
 End Class

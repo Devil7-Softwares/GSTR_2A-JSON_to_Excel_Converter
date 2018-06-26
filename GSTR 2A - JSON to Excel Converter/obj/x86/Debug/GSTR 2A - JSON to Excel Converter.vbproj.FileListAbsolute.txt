@@ -1,0 +1,17 @@
+C:\Users\Auditor\GSTR_2A-JSON_to_Excel_Converter\GSTR 2A - JSON to Excel Converter\bin\Debug\GSTR 2A - JSON to Excel Converter.exe.config
+C:\Users\Auditor\GSTR_2A-JSON_to_Excel_Converter\GSTR 2A - JSON to Excel Converter\bin\Debug\GSTR 2A - JSON to Excel Converter.exe
+C:\Users\Auditor\GSTR_2A-JSON_to_Excel_Converter\GSTR 2A - JSON to Excel Converter\bin\Debug\GSTR 2A - JSON to Excel Converter.pdb
+C:\Users\Auditor\GSTR_2A-JSON_to_Excel_Converter\GSTR 2A - JSON to Excel Converter\bin\Debug\GSTR 2A - JSON to Excel Converter.xml
+C:\Users\Auditor\GSTR_2A-JSON_to_Excel_Converter\GSTR 2A - JSON to Excel Converter\bin\Debug\DotNetZip.dll
+C:\Users\Auditor\GSTR_2A-JSON_to_Excel_Converter\GSTR 2A - JSON to Excel Converter\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Auditor\GSTR_2A-JSON_to_Excel_Converter\GSTR 2A - JSON to Excel Converter\obj\x86\Debug\GSTR 2A - JSON to Excel Converter.vbprojResolveAssemblyReference.cache
+C:\Users\Auditor\GSTR_2A-JSON_to_Excel_Converter\GSTR 2A - JSON to Excel Converter\obj\x86\Debug\D7Automation.frm_Main.resources
+C:\Users\Auditor\GSTR_2A-JSON_to_Excel_Converter\GSTR 2A - JSON to Excel Converter\obj\x86\Debug\D7Automation.frm_Splash.resources
+C:\Users\Auditor\GSTR_2A-JSON_to_Excel_Converter\GSTR 2A - JSON to Excel Converter\obj\x86\Debug\D7Automation.Resources.resources
+C:\Users\Auditor\GSTR_2A-JSON_to_Excel_Converter\GSTR 2A - JSON to Excel Converter\obj\x86\Debug\GSTR 2A - JSON to Excel Converter.vbproj.GenerateResource.Cache
+C:\Users\Auditor\GSTR_2A-JSON_to_Excel_Converter\GSTR 2A - JSON to Excel Converter\obj\x86\Debug\GSTR 2A - JSON to Excel Converter.exe.licenses
+C:\Users\Auditor\GSTR_2A-JSON_to_Excel_Converter\GSTR 2A - JSON to Excel Converter\obj\x86\Debug\GSTR 2A - JSON to Excel Converter.exe
+C:\Users\Auditor\GSTR_2A-JSON_to_Excel_Converter\GSTR 2A - JSON to Excel Converter\obj\x86\Debug\GSTR 2A - JSON to Excel Converter.xml
+C:\Users\Auditor\GSTR_2A-JSON_to_Excel_Converter\GSTR 2A - JSON to Excel Converter\obj\x86\Debug\GSTR 2A - JSON to Excel Converter.pdb
+C:\Users\Auditor\GSTR_2A-JSON_to_Excel_Converter\GSTR 2A - JSON to Excel Converter\bin\Debug\HtmlAgilityPack.dll
+C:\Users\Auditor\GSTR_2A-JSON_to_Excel_Converter\GSTR 2A - JSON to Excel Converter\obj\x86\Debug\D7Automation.frm_Wait.resources
