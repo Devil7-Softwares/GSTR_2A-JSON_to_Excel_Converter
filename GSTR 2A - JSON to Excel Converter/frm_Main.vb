@@ -22,4 +22,16 @@
         Next
     End Sub
 
+    Private Sub btn_Remove_ItemClick(sender As System.Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles btn_Remove.ItemClick
+        If lst_Json.SelectedItems.Count > 0 Then
+            Dim Items2Remove As New List(Of JSONFile)
+            For Each i As JSONFile In lst_Json.Items
+                Items2Remove.Add(i)
+            Next
+            For Each i As JSONFile In Items2Remove
+                lst_Json.Items.Remove(i)
+            Next
+        End If
+    End Sub
+
 End Class
