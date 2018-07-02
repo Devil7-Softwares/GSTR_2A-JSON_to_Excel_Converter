@@ -34,4 +34,17 @@
         End If
     End Sub
 
+    Private Sub lst_Json_DragDrop(ByVal sender As Object, ByVal e As System.Windows.Forms.DragEventArgs) Handles lst_Json.DragDrop
+        Dim files() As String = e.Data.GetData(DataFormats.FileDrop)
+        If files.Count > 0 Then
+            AddJsonFiles(files)
+        End If
+    End Sub
+
+    Private Sub lst_Json_DragEnter(ByVal sender As Object, ByVal e As System.Windows.Forms.DragEventArgs) Handles lst_Json.DragEnter
+        If e.Data.GetDataPresent(DataFormats.FileDrop) Then
+            e.Effect = DragDropEffects.Copy
+        End If
+    End Sub
+
 End Class
