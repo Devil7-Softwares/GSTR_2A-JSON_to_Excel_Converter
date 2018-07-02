@@ -37,8 +37,11 @@ Partial Class frm_Main
         Me.btn_RTF = New DevExpress.XtraBars.BarButtonItem()
         Me.btn_TXT = New DevExpress.XtraBars.BarButtonItem()
         Me.btn_PDF = New DevExpress.XtraBars.BarButtonItem()
+        Me.btn_ReadJSON = New DevExpress.XtraBars.BarButtonItem()
+        Me.btn_Combine = New DevExpress.XtraBars.BarButtonItem()
         Me.rp_Home = New DevExpress.XtraBars.Ribbon.RibbonPage()
         Me.rpg_JSON = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
+        Me.rpg_Process = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
         Me.rpg_Export = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
         Me.RibbonStatusBar = New DevExpress.XtraBars.Ribbon.RibbonStatusBar()
         Me.GroupControl1 = New DevExpress.XtraEditors.GroupControl()
@@ -50,6 +53,7 @@ Partial Class frm_Main
         Me.menu_Others = New DevExpress.XtraBars.PopupMenu(Me.components)
         Me.ProgressPanel = New DevExpress.XtraWaitForm.ProgressPanel()
         Me.OpenJSONFiles = New System.Windows.Forms.OpenFileDialog()
+        Me.JSONReader = New System.ComponentModel.BackgroundWorker()
         CType(Me.RibbonControl, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.menu_Excel, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GroupControl1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -66,16 +70,16 @@ Partial Class frm_Main
         Me.RibbonControl.AllowMinimizeRibbon = False
         Me.RibbonControl.AllowTrimPageText = False
         Me.RibbonControl.ExpandCollapseItem.Id = 0
-        Me.RibbonControl.Items.AddRange(New DevExpress.XtraBars.BarItem() {Me.RibbonControl.ExpandCollapseItem, Me.btn_Add, Me.btn_Remove, Me.btn_Clear, Me.btn_Excel, Me.btn_Excel_XLS, Me.btn_Excel_XLSX, Me.btn_Word, Me.btn_Other, Me.btn_CSV, Me.btn_HTML, Me.btn_MHT, Me.btn_RTF, Me.btn_TXT, Me.btn_PDF})
+        Me.RibbonControl.Items.AddRange(New DevExpress.XtraBars.BarItem() {Me.RibbonControl.ExpandCollapseItem, Me.btn_Add, Me.btn_Remove, Me.btn_Clear, Me.btn_Excel, Me.btn_Excel_XLS, Me.btn_Excel_XLSX, Me.btn_Word, Me.btn_Other, Me.btn_CSV, Me.btn_HTML, Me.btn_MHT, Me.btn_RTF, Me.btn_TXT, Me.btn_PDF, Me.btn_ReadJSON, Me.btn_Combine})
         Me.RibbonControl.Location = New System.Drawing.Point(0, 0)
-        Me.RibbonControl.MaxItemId = 15
+        Me.RibbonControl.MaxItemId = 17
         Me.RibbonControl.Name = "RibbonControl"
         Me.RibbonControl.Pages.AddRange(New DevExpress.XtraBars.Ribbon.RibbonPage() {Me.rp_Home})
         Me.RibbonControl.ShowApplicationButton = DevExpress.Utils.DefaultBoolean.[False]
         Me.RibbonControl.ShowCategoryInCaption = False
         Me.RibbonControl.ShowExpandCollapseButton = DevExpress.Utils.DefaultBoolean.[False]
         Me.RibbonControl.ShowToolbarCustomizeItem = False
-        Me.RibbonControl.Size = New System.Drawing.Size(442, 143)
+        Me.RibbonControl.Size = New System.Drawing.Size(671, 143)
         Me.RibbonControl.StatusBar = Me.RibbonStatusBar
         Me.RibbonControl.Toolbar.ShowCustomizeItem = False
         '
@@ -189,9 +193,27 @@ Partial Class frm_Main
         Me.btn_PDF.ImageOptions.LargeImage = Global.GSTR_2A___JSON_to_Excel_Converter.My.Resources.Resources.export_pdf
         Me.btn_PDF.Name = "btn_PDF"
         '
+        'btn_ReadJSON
+        '
+        Me.btn_ReadJSON.Caption = "Read JSON"
+        Me.btn_ReadJSON.Id = 15
+        Me.btn_ReadJSON.ImageOptions.Image = Global.GSTR_2A___JSON_to_Excel_Converter.My.Resources.Resources.process
+        Me.btn_ReadJSON.ImageOptions.LargeImage = Global.GSTR_2A___JSON_to_Excel_Converter.My.Resources.Resources.process
+        Me.btn_ReadJSON.Name = "btn_ReadJSON"
+        '
+        'btn_Combine
+        '
+        Me.btn_Combine.ButtonStyle = DevExpress.XtraBars.BarButtonStyle.Check
+        Me.btn_Combine.Caption = "Combine All"
+        Me.btn_Combine.Down = True
+        Me.btn_Combine.Id = 16
+        Me.btn_Combine.ImageOptions.Image = Global.GSTR_2A___JSON_to_Excel_Converter.My.Resources.Resources.combine
+        Me.btn_Combine.ImageOptions.LargeImage = Global.GSTR_2A___JSON_to_Excel_Converter.My.Resources.Resources.combine
+        Me.btn_Combine.Name = "btn_Combine"
+        '
         'rp_Home
         '
-        Me.rp_Home.Groups.AddRange(New DevExpress.XtraBars.Ribbon.RibbonPageGroup() {Me.rpg_JSON, Me.rpg_Export})
+        Me.rp_Home.Groups.AddRange(New DevExpress.XtraBars.Ribbon.RibbonPageGroup() {Me.rpg_JSON, Me.rpg_Process, Me.rpg_Export})
         Me.rp_Home.Name = "rp_Home"
         Me.rp_Home.Text = "Home"
         '
@@ -203,6 +225,13 @@ Partial Class frm_Main
         Me.rpg_JSON.Name = "rpg_JSON"
         Me.rpg_JSON.ShowCaptionButton = False
         Me.rpg_JSON.Text = "JSON Files"
+        '
+        'rpg_Process
+        '
+        Me.rpg_Process.ItemLinks.Add(Me.btn_ReadJSON)
+        Me.rpg_Process.ItemLinks.Add(Me.btn_Combine, True)
+        Me.rpg_Process.Name = "rpg_Process"
+        Me.rpg_Process.Text = "Process"
         '
         'rpg_Export
         '
@@ -219,7 +248,7 @@ Partial Class frm_Main
         Me.RibbonStatusBar.Location = New System.Drawing.Point(0, 418)
         Me.RibbonStatusBar.Name = "RibbonStatusBar"
         Me.RibbonStatusBar.Ribbon = Me.RibbonControl
-        Me.RibbonStatusBar.Size = New System.Drawing.Size(442, 31)
+        Me.RibbonStatusBar.Size = New System.Drawing.Size(671, 31)
         '
         'GroupControl1
         '
@@ -227,7 +256,7 @@ Partial Class frm_Main
         Me.GroupControl1.Dock = System.Windows.Forms.DockStyle.Top
         Me.GroupControl1.Location = New System.Drawing.Point(0, 143)
         Me.GroupControl1.Name = "GroupControl1"
-        Me.GroupControl1.Size = New System.Drawing.Size(442, 119)
+        Me.GroupControl1.Size = New System.Drawing.Size(671, 119)
         Me.GroupControl1.TabIndex = 2
         Me.GroupControl1.Text = "JSON Files (Use 'Add' Button or 'Drag n Drop' Files)"
         '
@@ -238,7 +267,7 @@ Partial Class frm_Main
         Me.lst_Json.FormattingEnabled = True
         Me.lst_Json.Location = New System.Drawing.Point(2, 20)
         Me.lst_Json.Name = "lst_Json"
-        Me.lst_Json.Size = New System.Drawing.Size(438, 97)
+        Me.lst_Json.Size = New System.Drawing.Size(667, 97)
         Me.lst_Json.TabIndex = 1
         '
         'SplitterControl1
@@ -246,7 +275,7 @@ Partial Class frm_Main
         Me.SplitterControl1.Dock = System.Windows.Forms.DockStyle.Top
         Me.SplitterControl1.Location = New System.Drawing.Point(0, 262)
         Me.SplitterControl1.Name = "SplitterControl1"
-        Me.SplitterControl1.Size = New System.Drawing.Size(442, 5)
+        Me.SplitterControl1.Size = New System.Drawing.Size(671, 5)
         Me.SplitterControl1.TabIndex = 3
         Me.SplitterControl1.TabStop = False
         '
@@ -256,7 +285,7 @@ Partial Class frm_Main
         Me.tb_Sheets.HeaderLocation = DevExpress.XtraTab.TabHeaderLocation.Bottom
         Me.tb_Sheets.Location = New System.Drawing.Point(0, 267)
         Me.tb_Sheets.Name = "tb_Sheets"
-        Me.tb_Sheets.Size = New System.Drawing.Size(442, 151)
+        Me.tb_Sheets.Size = New System.Drawing.Size(671, 151)
         Me.tb_Sheets.TabIndex = 4
         '
         'GridControl1
@@ -294,7 +323,7 @@ Partial Class frm_Main
         Me.ProgressPanel.Dock = System.Windows.Forms.DockStyle.Fill
         Me.ProgressPanel.Location = New System.Drawing.Point(0, 267)
         Me.ProgressPanel.Name = "ProgressPanel"
-        Me.ProgressPanel.Size = New System.Drawing.Size(442, 151)
+        Me.ProgressPanel.Size = New System.Drawing.Size(671, 151)
         Me.ProgressPanel.TabIndex = 7
         Me.ProgressPanel.Visible = False
         '
@@ -306,11 +335,14 @@ Partial Class frm_Main
         Me.OpenJSONFiles.Multiselect = True
         Me.OpenJSONFiles.Title = "Select GSTR 2A JSON/ZIP Files"
         '
+        'JSONReader
+        '
+        '
         'frm_Main
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(442, 449)
+        Me.ClientSize = New System.Drawing.Size(671, 449)
         Me.Controls.Add(Me.ProgressPanel)
         Me.Controls.Add(Me.tb_Sheets)
         Me.Controls.Add(Me.SplitterControl1)
@@ -364,6 +396,10 @@ Partial Class frm_Main
     Friend WithEvents btn_PDF As DevExpress.XtraBars.BarButtonItem
     Friend WithEvents ProgressPanel As DevExpress.XtraWaitForm.ProgressPanel
     Friend WithEvents OpenJSONFiles As System.Windows.Forms.OpenFileDialog
+    Friend WithEvents btn_ReadJSON As DevExpress.XtraBars.BarButtonItem
+    Friend WithEvents rpg_Process As DevExpress.XtraBars.Ribbon.RibbonPageGroup
+    Friend WithEvents btn_Combine As DevExpress.XtraBars.BarButtonItem
+    Friend WithEvents JSONReader As System.ComponentModel.BackgroundWorker
 
 
 End Class
