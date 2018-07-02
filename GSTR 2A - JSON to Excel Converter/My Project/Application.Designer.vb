@@ -32,7 +32,7 @@ Namespace My
         
         <Global.System.Diagnostics.DebuggerStepThroughAttribute()>  _
         Protected Overrides Sub OnCreateMainForm()
-            Me.MainForm = Global.GSTR_2A___JSON_to_Excel_Converter.Form1
+            Me.MainForm = Global.GSTR_2A___JSON_to_Excel_Converter.frm_Main
         End Sub
     End Class
 End Namespace
