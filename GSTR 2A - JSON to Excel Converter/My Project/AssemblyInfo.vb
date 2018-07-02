@@ -9,10 +9,10 @@ Imports System.Runtime.InteropServices
 ' Review the values of the assembly attributes
 
 <Assembly: AssemblyTitle("GSTR 2A - JSON to Excel Converter")> 
-<Assembly: AssemblyDescription("")> 
-<Assembly: AssemblyCompany("")> 
-<Assembly: AssemblyProduct("GSTR 2A - JSON to Excel Converter")> 
-<Assembly: AssemblyCopyright("Copyright ©  2018")> 
+<Assembly: AssemblyDescription("Simple tool to convert GSTR 2A JSON files downloaded from GST website.")> 
+<Assembly: AssemblyCompany("Devil7")> 
+<Assembly: AssemblyProduct("Devil7 - Automation Tools")> 
+<Assembly: AssemblyCopyright("Copyright © Devil7 2018")> 
 <Assembly: AssemblyTrademark("")> 
 
 <Assembly: ComVisible(False)>
@@ -31,5 +31,5 @@ Imports System.Runtime.InteropServices
 ' by using the '*' as shown below:
 ' <Assembly: AssemblyVersion("1.0.*")> 
 
-<Assembly: AssemblyVersion("1.0.0.0")> 
-<Assembly: AssemblyFileVersion("1.0.0.0")> 
+<Assembly: AssemblyVersion("2.0.0.0")> 
+<Assembly: AssemblyFileVersion("2.0.0.0")> 
