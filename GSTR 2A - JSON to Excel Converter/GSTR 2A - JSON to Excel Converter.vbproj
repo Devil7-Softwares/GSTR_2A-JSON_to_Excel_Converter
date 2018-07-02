@@ -64,6 +64,9 @@
     <Reference Include="DotNetZip">
       <HintPath>..\dll\DotNetZip.dll</HintPath>
     </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\dll\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Deployment" />
@@ -88,7 +91,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ApplicationEvents.vb" />
+    <Compile Include="Classess\GSTR2AEntry.vb" />
+    <Compile Include="Classess\JSON\B2BEntry.vb" />
+    <Compile Include="Classess\JSON\Invoice.vb" />
+    <Compile Include="Classess\JSON\Item.vb" />
+    <Compile Include="Classess\JSON\ItemDetails.vb" />
     <Compile Include="Classess\JSON\JSONFile.vb" />
+    <Compile Include="Classess\JSON\Returns.vb" />
     <Compile Include="Classess\PublicFunctions.vb" />
     <Compile Include="frm_Main.Designer.vb">
       <DependentUpon>frm_Main.vb</DependentUpon>
@@ -138,6 +147,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="icon.ico" />
+    <None Include="Resources\combine.ico" />
+    <None Include="Resources\process.ico" />
     <None Include="Resources\export_pdf.ico" />
     <None Include="Resources\export_word.ico" />
     <None Include="Resources\export_others.ico" />
