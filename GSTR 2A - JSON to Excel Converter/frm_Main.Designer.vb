@@ -49,6 +49,7 @@ Partial Class frm_Main
         Me.GridView1 = New DevExpress.XtraGrid.Views.Grid.GridView()
         Me.menu_Others = New DevExpress.XtraBars.PopupMenu(Me.components)
         Me.ProgressPanel = New DevExpress.XtraWaitForm.ProgressPanel()
+        Me.OpenJSONFiles = New System.Windows.Forms.OpenFileDialog()
         CType(Me.RibbonControl, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.menu_Excel, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GroupControl1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -297,6 +298,14 @@ Partial Class frm_Main
         Me.ProgressPanel.TabIndex = 7
         Me.ProgressPanel.Visible = False
         '
+        'OpenJSONFiles
+        '
+        Me.OpenJSONFiles.FileName = "*.json"
+        Me.OpenJSONFiles.Filter = "All Supported Formats|*.json;*.zip|JSON Files|*.json|ZIP Archives|*.zip"
+        Me.OpenJSONFiles.FilterIndex = 0
+        Me.OpenJSONFiles.Multiselect = True
+        Me.OpenJSONFiles.Title = "Select GSTR 2A JSON/ZIP Files"
+        '
         'frm_Main
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -354,6 +363,7 @@ Partial Class frm_Main
     Friend WithEvents btn_TXT As DevExpress.XtraBars.BarButtonItem
     Friend WithEvents btn_PDF As DevExpress.XtraBars.BarButtonItem
     Friend WithEvents ProgressPanel As DevExpress.XtraWaitForm.ProgressPanel
+    Friend WithEvents OpenJSONFiles As System.Windows.Forms.OpenFileDialog
 
 
 End Class
