@@ -96,6 +96,7 @@ Partial Class frm_Main
         Me.JSONReader = New System.ComponentModel.BackgroundWorker()
         Me.SaveFileDlg = New System.Windows.Forms.SaveFileDialog()
         Me.SelectExportFolder = New System.Windows.Forms.FolderBrowserDialog()
+        Me.Theme = New DevExpress.LookAndFeel.DefaultLookAndFeel(Me.components)
         CType(Me.RibbonControl, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.menu_Excel, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.menu_Others, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -575,6 +576,7 @@ Partial Class frm_Main
     Friend WithEvents SkinRibbonGalleryBarItem1 As DevExpress.XtraBars.SkinRibbonGalleryBarItem
     Friend WithEvents rpg_Info As DevExpress.XtraBars.Ribbon.RibbonPageGroup
     Friend WithEvents btn_About As DevExpress.XtraBars.BarButtonItem
+    Friend WithEvents Theme As DevExpress.LookAndFeel.DefaultLookAndFeel
 
 
 End Class

@@ -356,11 +356,26 @@ Public Class frm_Main
         frm_About.ShowDialog()
     End Sub
 
+    Private Sub frm_Main_FormClosing(sender As Object, e As System.Windows.Forms.FormClosingEventArgs) Handles Me.FormClosing
+        My.Settings.Skin = GetSkin.Name
+        My.Settings.Save()
+    End Sub
+
     Private Sub frm_Main_Shown(sender As Object, e As System.EventArgs) Handles Me.Shown
         If My.Settings.FirstRun Then
             My.Settings.FirstRun = False
             My.Settings.Save()
             frm_About.ShowDialog()
+        End If
+    End Sub
+
+    Private Sub frm_Main_Load(sender As System.Object, e As System.EventArgs) Handles MyBase.Load
+        If My.Settings.Skin <> "" Then
+            Try
+                Theme.LookAndFeel.SkinName = My.Settings.Skin
+            Catch ex As Exception
+
+            End Try
         End If
     End Sub
 End Class
