@@ -251,6 +251,31 @@ Public Class frm_Main
         SaveFileDlg.Filter = Filter
         Return Extenstion
     End Function
+
+    Private Sub btn_PDF_ItemClick(sender As System.Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles btn_PDF.ItemClick
+        Export(ExportFormat.PDF)
+    End Sub
+
+
+    Private Sub btn_CSV_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles btn_CSV.ItemClick
+        Export(ExportFormat.CSV)
+    End Sub
+
+    Private Sub btn_HTML_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles btn_HTML.ItemClick
+        Export(ExportFormat.HTML)
+    End Sub
+
+    Private Sub btn_MHT_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles btn_MHT.ItemClick
+        Export(ExportFormat.MHTML)
+    End Sub
+
+    Private Sub btn_RTF_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles btn_RTF.ItemClick
+        Export(ExportFormat.RTF)
+    End Sub
+
+    Private Sub btn_TXT_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles btn_TXT.ItemClick
+        Export(ExportFormat.TXT)
+    End Sub
 End Class
 Public Enum ExportFormat
     Word
