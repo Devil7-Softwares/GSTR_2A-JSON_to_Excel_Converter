@@ -87,7 +87,6 @@ Partial Class frm_Main
         Me.RibbonStatusBar = New DevExpress.XtraBars.Ribbon.RibbonStatusBar()
         Me.GroupControl1 = New DevExpress.XtraEditors.GroupControl()
         Me.lst_Json = New System.Windows.Forms.ListBox()
-        Me.SplitterControl1 = New DevExpress.XtraEditors.SplitterControl()
         Me.tb_Sheets = New DevExpress.XtraTab.XtraTabControl()
         Me.GridControl1 = New DevExpress.XtraGrid.GridControl()
         Me.GridView1 = New DevExpress.XtraGrid.Views.Grid.GridView()
@@ -97,6 +96,7 @@ Partial Class frm_Main
         Me.SaveFileDlg = New System.Windows.Forms.SaveFileDialog()
         Me.SelectExportFolder = New System.Windows.Forms.FolderBrowserDialog()
         Me.Theme = New DevExpress.LookAndFeel.DefaultLookAndFeel(Me.components)
+        Me.SplitContainerControl1 = New DevExpress.XtraEditors.SplitContainerControl()
         CType(Me.RibbonControl, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.menu_Excel, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.menu_Others, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -105,6 +105,8 @@ Partial Class frm_Main
         CType(Me.tb_Sheets, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GridControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GridView1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.SplitContainerControl1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.SplitContainerControl1.SuspendLayout()
         Me.SuspendLayout()
         '
         'RibbonControl
@@ -425,10 +427,10 @@ Partial Class frm_Main
         'GroupControl1
         '
         Me.GroupControl1.Controls.Add(Me.lst_Json)
-        Me.GroupControl1.Dock = System.Windows.Forms.DockStyle.Top
-        Me.GroupControl1.Location = New System.Drawing.Point(0, 143)
+        Me.GroupControl1.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.GroupControl1.Location = New System.Drawing.Point(0, 0)
         Me.GroupControl1.Name = "GroupControl1"
-        Me.GroupControl1.Size = New System.Drawing.Size(590, 119)
+        Me.GroupControl1.Size = New System.Drawing.Size(590, 120)
         Me.GroupControl1.TabIndex = 2
         Me.GroupControl1.Text = "JSON Files (Use 'Add' Button or 'Drag n Drop' Files)"
         '
@@ -439,25 +441,16 @@ Partial Class frm_Main
         Me.lst_Json.FormattingEnabled = True
         Me.lst_Json.Location = New System.Drawing.Point(2, 20)
         Me.lst_Json.Name = "lst_Json"
-        Me.lst_Json.Size = New System.Drawing.Size(586, 97)
+        Me.lst_Json.Size = New System.Drawing.Size(586, 98)
         Me.lst_Json.TabIndex = 1
-        '
-        'SplitterControl1
-        '
-        Me.SplitterControl1.Dock = System.Windows.Forms.DockStyle.Top
-        Me.SplitterControl1.Location = New System.Drawing.Point(0, 262)
-        Me.SplitterControl1.Name = "SplitterControl1"
-        Me.SplitterControl1.Size = New System.Drawing.Size(590, 5)
-        Me.SplitterControl1.TabIndex = 3
-        Me.SplitterControl1.TabStop = False
         '
         'tb_Sheets
         '
         Me.tb_Sheets.Dock = System.Windows.Forms.DockStyle.Fill
         Me.tb_Sheets.HeaderLocation = DevExpress.XtraTab.TabHeaderLocation.Bottom
-        Me.tb_Sheets.Location = New System.Drawing.Point(0, 267)
+        Me.tb_Sheets.Location = New System.Drawing.Point(0, 0)
         Me.tb_Sheets.Name = "tb_Sheets"
-        Me.tb_Sheets.Size = New System.Drawing.Size(590, 141)
+        Me.tb_Sheets.Size = New System.Drawing.Size(590, 140)
         Me.tb_Sheets.TabIndex = 4
         '
         'GridControl1
@@ -483,9 +476,9 @@ Partial Class frm_Main
         Me.ProgressPanel.ContentAlignment = System.Drawing.ContentAlignment.MiddleCenter
         Me.ProgressPanel.Description = "Parsing JSON Files..."
         Me.ProgressPanel.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.ProgressPanel.Location = New System.Drawing.Point(0, 267)
+        Me.ProgressPanel.Location = New System.Drawing.Point(0, 0)
         Me.ProgressPanel.Name = "ProgressPanel"
-        Me.ProgressPanel.Size = New System.Drawing.Size(590, 141)
+        Me.ProgressPanel.Size = New System.Drawing.Size(590, 140)
         Me.ProgressPanel.TabIndex = 7
         Me.ProgressPanel.Visible = False
         '
@@ -507,15 +500,30 @@ Partial Class frm_Main
         '
         Me.SelectExportFolder.Description = "Select Folder to Export Files"
         '
+        'SplitContainerControl1
+        '
+        Me.SplitContainerControl1.AllowBorderColorBlending = True
+        Me.SplitContainerControl1.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.SplitContainerControl1.Horizontal = False
+        Me.SplitContainerControl1.Location = New System.Drawing.Point(0, 143)
+        Me.SplitContainerControl1.Name = "SplitContainerControl1"
+        Me.SplitContainerControl1.Panel1.Controls.Add(Me.GroupControl1)
+        Me.SplitContainerControl1.Panel1.MinSize = 120
+        Me.SplitContainerControl1.Panel1.Text = "JSON Files"
+        Me.SplitContainerControl1.Panel2.Controls.Add(Me.ProgressPanel)
+        Me.SplitContainerControl1.Panel2.Controls.Add(Me.tb_Sheets)
+        Me.SplitContainerControl1.Panel2.MinSize = 140
+        Me.SplitContainerControl1.Panel2.Text = "Panel2"
+        Me.SplitContainerControl1.Size = New System.Drawing.Size(590, 265)
+        Me.SplitContainerControl1.SplitterPosition = 135
+        Me.SplitContainerControl1.TabIndex = 10
+        '
         'frm_Main
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(590, 439)
-        Me.Controls.Add(Me.ProgressPanel)
-        Me.Controls.Add(Me.tb_Sheets)
-        Me.Controls.Add(Me.SplitterControl1)
-        Me.Controls.Add(Me.GroupControl1)
+        Me.Controls.Add(Me.SplitContainerControl1)
         Me.Controls.Add(Me.RibbonStatusBar)
         Me.Controls.Add(Me.RibbonControl)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
@@ -532,6 +540,8 @@ Partial Class frm_Main
         CType(Me.tb_Sheets, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GridControl1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GridView1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.SplitContainerControl1, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.SplitContainerControl1.ResumeLayout(False)
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -542,7 +552,6 @@ Partial Class frm_Main
     Friend WithEvents rpg_JSON As DevExpress.XtraBars.Ribbon.RibbonPageGroup
     Friend WithEvents RibbonStatusBar As DevExpress.XtraBars.Ribbon.RibbonStatusBar
     Friend WithEvents GroupControl1 As DevExpress.XtraEditors.GroupControl
-    Friend WithEvents SplitterControl1 As DevExpress.XtraEditors.SplitterControl
     Friend WithEvents tb_Sheets As DevExpress.XtraTab.XtraTabControl
     Friend WithEvents lst_Json As System.Windows.Forms.ListBox
     Friend WithEvents btn_Add As DevExpress.XtraBars.BarButtonItem
@@ -578,6 +587,7 @@ Partial Class frm_Main
     Friend WithEvents rpg_Info As DevExpress.XtraBars.Ribbon.RibbonPageGroup
     Friend WithEvents btn_About As DevExpress.XtraBars.BarButtonItem
     Friend WithEvents Theme As DevExpress.LookAndFeel.DefaultLookAndFeel
+    Friend WithEvents SplitContainerControl1 As DevExpress.XtraEditors.SplitContainerControl
 
 
 End Class
