@@ -90,33 +90,42 @@ Public Class frm_Main
     End Sub
 
     Private Sub JSONReader_DoWork(sender As System.Object, e As System.ComponentModel.DoWorkEventArgs) Handles JSONReader.DoWork
-        DisableControls()
+        Try
+            DisableControls()
 
-        Me.Invoke(Sub()
-                      tb_Sheets.TabPages.Clear(True)
-                  End Sub)
-        For Each json2read As JSONFile In lst_Json.Items
-            Dim filename As String = json2read.Path
-            If json2read.isZip Then
-                Using zip = ZipFile.Read(filename)
-                    Dim totalEntries As Integer = zip.Entries.Count
-                    For Each ent As ZipEntry In zip.Entries
-                        If ent.FileName.ToLower.EndsWith(".json") Then
-                            Dim MS As New IO.MemoryStream
-                            ent.Extract(MS)
-                            AddData(ReadData(MS.ToArray))
-                            Exit For
-                        End If
-                    Next
-                End Using
-            Else
-                AddData(ReadData(My.Computer.FileSystem.ReadAllBytes(filename)))
-            End If
-        Next
+            Me.Invoke(Sub()
+                          tb_Sheets.TabPages.Clear(True)
+                      End Sub)
+            For Each json2read As JSONFile In lst_Json.Items
+                Dim filename As String = json2read.Path
+                If json2read.isZip Then
+                    Using zip = ZipFile.Read(filename)
+                        Dim totalEntries As Integer = zip.Entries.Count
+                        For Each ent As ZipEntry In zip.Entries
+                            If ent.FileName.ToLower.EndsWith(".json") Then
+                                Dim MS As New IO.MemoryStream
+                                ent.Extract(MS)
+                                AddData(ReadData(MS.ToArray))
+                                Exit For
+                            End If
+                        Next
+                    End Using
+                Else
+                    AddData(ReadData(My.Computer.FileSystem.ReadAllBytes(filename)))
+                End If
+            Next
 
-        EnableControls()
+            EnableControls()
+            MsgBox("Successfully parsed given files.", MsgBoxStyle.Information + MsgBoxStyle.OkOnly, "Done")
+        Catch ex As Exception
+            ShowError("Error on reading json files", ex)
+        End Try
     End Sub
-
+    Private Sub ShowError(ByVal Message As String, ByVal Exception As Exception)
+        MsgBox(Message & vbNewLine & vbNewLine & vbNewLine & vbNewLine & _
+               "Additional Information:" & vbNewLine & vbNewLine & _
+               Exception.Message & Exception.StackTrace, MsgBoxStyle.Exclamation + MsgBoxStyle.OkOnly, "Error")
+    End Sub
     Private Function ReadData(ByVal Data As Byte()) As List(Of GSTR2AEntry)
         Dim R As New List(Of GSTR2AEntry)
         Dim Returns = ReadJson(System.Text.Encoding.ASCII.GetString(Data))
@@ -185,28 +194,34 @@ Public Class frm_Main
     End Sub
 
     Sub Export(ByVal Format As ExportFormat)
-        Dim Ext = SetupSaveDialog(Format)
-        If tb_Sheets.TabPages.Count = 1 Then
-            If SaveFileDlg.ShowDialog = Windows.Forms.DialogResult.OK Then
-                Dim GC As GridControl = GetGridControl(0)
-                SaveFile(GC, Format, SaveFileDlg.FileName)
-            End If
-        ElseIf tb_Sheets.TabPages.Count > 1 Then
-            If Format <> ExportFormat.XLS AndAlso Format <> ExportFormat.XLSX Then
-                If SelectExportFolder.ShowDialog = Windows.Forms.DialogResult.OK Then
-                    For i As Integer = 0 To tb_Sheets.TabPages.Count - 1
-                        tb_Sheets.SelectedTabPageIndex = i
-                        Application.DoEvents()
-                        Dim GC As GridControl = GetGridControl(i)
-                        SaveFile(GC, Format, IO.Path.Combine(SelectExportFolder.SelectedPath, GC.Tag.ToString & "." & Ext))
-                    Next
+        Try
+            Dim Ext = SetupSaveDialog(Format)
+            If tb_Sheets.TabPages.Count = 1 Then
+                If SaveFileDlg.ShowDialog = Windows.Forms.DialogResult.OK Then
+                    Dim GC As GridControl = GetGridControl(0)
+                    SaveFile(GC, Format, SaveFileDlg.FileName)
+                    MsgBox("Data Export Completed.", MsgBoxStyle.Information + MsgBoxStyle.OkOnly, "Done")
+                End If
+            ElseIf tb_Sheets.TabPages.Count > 1 Then
+                If Format <> ExportFormat.XLS AndAlso Format <> ExportFormat.XLSX Then
+                    If SelectExportFolder.ShowDialog = Windows.Forms.DialogResult.OK Then
+                        For i As Integer = 0 To tb_Sheets.TabPages.Count - 1
+                            tb_Sheets.SelectedTabPageIndex = i
+                            Application.DoEvents()
+                            Dim GC As GridControl = GetGridControl(i)
+                            SaveFile(GC, Format, IO.Path.Combine(SelectExportFolder.SelectedPath, GC.Tag.ToString & "." & Ext))
+                        Next
+                        MsgBox("Data Export Completed.", MsgBoxStyle.Information + MsgBoxStyle.OkOnly, "Done")
+                    End If
+                Else
+                    ExportMultiSheetExcel(Format)
                 End If
             Else
-                ExportMultiSheetExcel(Format)
+                MsgBox("No data to export. Pleas add json files & process before exporting", MsgBoxStyle.Exclamation + MsgBoxStyle.OkOnly, "Error")
             End If
-        Else
-            MsgBox("No data to export. Pleas add json files & process before exporting", MsgBoxStyle.Exclamation + MsgBoxStyle.OkOnly, "Error")
-        End If
+        Catch ex As Exception
+            ShowError("Error on exporting data", ex)
+        End Try
     End Sub
     Sub ExportMultiSheetExcel(ByVal Format As ExportFormat)
         If SaveFileDlg.ShowDialog = Windows.Forms.DialogResult.OK Then
@@ -234,6 +249,7 @@ Public Class frm_Main
             FinalWorkBook.Worksheets.RemoveAt(0)
             FinalWorkBook.EndUpdate()
             FinalWorkBook.SaveDocument(SaveFileDlg.FileName)
+            MsgBox("Data Export Completed.", MsgBoxStyle.Information + MsgBoxStyle.OkOnly, "Done")
         End If
     End Sub
     Sub SaveFile(ByVal GC As GridControl, ByVal Format As ExportFormat, ByVal Filename As String)
