@@ -1,4 +1,5 @@
 ﻿Imports DevExpress.XtraGrid
+Imports DevExpress.Spreadsheet
 Imports Ionic.Zip
 
 Public Class frm_Main
@@ -200,9 +201,39 @@ Public Class frm_Main
                         SaveFile(GC, Format, IO.Path.Combine(SelectExportFolder.SelectedPath, GC.Tag.ToString & "." & Ext))
                     Next
                 End If
+            Else
+                ExportMultiSheetExcel(Format)
             End If
         Else
             MsgBox("No data to export. Pleas add json files & process before exporting", MsgBoxStyle.Exclamation + MsgBoxStyle.OkOnly, "Error")
+        End If
+    End Sub
+    Sub ExportMultiSheetExcel(ByVal Format As ExportFormat)
+        If SaveFileDlg.ShowDialog = Windows.Forms.DialogResult.OK Then
+            Dim FinalWorkBook As New Workbook
+            FinalWorkBook.BeginUpdate()
+            For i As Integer = 0 To tb_Sheets.TabPages.Count - 1
+                tb_Sheets.SelectedTabPageIndex = i
+                Application.DoEvents()
+                Dim GC As GridControl = GetGridControl(i)
+                Using MS As New IO.MemoryStream
+                    Select Case Format
+                        Case ExportFormat.XLS
+                            GC.ExportToXls(MS)
+                        Case ExportFormat.XLSX
+                            GC.ExportToXlsx(MS)
+                    End Select
+                    Using TempWorkBook As New Workbook
+                        TempWorkBook.LoadDocument(MS)
+                        Dim Sheet As Worksheet = FinalWorkBook.Worksheets.Add
+                        Sheet.CopyFrom(TempWorkBook.Worksheets(0))
+                        Sheet.Name = GC.Tag.ToString
+                    End Using
+                End Using
+            Next
+            FinalWorkBook.Worksheets.RemoveAt(0)
+            FinalWorkBook.EndUpdate()
+            FinalWorkBook.SaveDocument(SaveFileDlg.FileName)
         End If
     End Sub
     Sub SaveFile(ByVal GC As GridControl, ByVal Format As ExportFormat, ByVal Filename As String)
