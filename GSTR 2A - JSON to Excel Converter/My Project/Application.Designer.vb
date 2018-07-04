@@ -34,5 +34,10 @@ Namespace My
         Protected Overrides Sub OnCreateMainForm()
             Me.MainForm = Global.GSTR_2A___JSON_to_Excel_Converter.frm_Main
         End Sub
+        
+        <Global.System.Diagnostics.DebuggerStepThroughAttribute()>  _
+        Protected Overrides Sub OnCreateSplashScreen()
+            Me.SplashScreen = Global.GSTR_2A___JSON_to_Excel_Converter.frm_Splash
+        End Sub
     End Class
 End Namespace

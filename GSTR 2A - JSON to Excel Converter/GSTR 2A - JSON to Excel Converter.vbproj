@@ -114,6 +114,12 @@
     <Compile Include="frm_Main.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="frm_Splash.designer.vb">
+      <DependentUpon>frm_Splash.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frm_Splash.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -140,6 +146,9 @@
     <EmbeddedResource Include="frm_Main.resx">
       <DependentUpon>frm_Main.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frm_Splash.resx">
+      <DependentUpon>frm_Splash.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="My Project\licenses.licx" />
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
@@ -162,6 +171,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="icon.ico" />
+    <None Include="Resources\splash.jpg" />
     <None Include="Resources\icon.png" />
     <None Include="Resources\info.ico" />
     <None Include="Resources\combine.ico" />
