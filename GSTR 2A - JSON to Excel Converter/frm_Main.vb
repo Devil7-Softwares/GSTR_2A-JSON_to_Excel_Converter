@@ -355,6 +355,14 @@ Public Class frm_Main
     Private Sub btn_About_ItemClick(sender As System.Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles btn_About.ItemClick
         frm_About.ShowDialog()
     End Sub
+
+    Private Sub frm_Main_Shown(sender As Object, e As System.EventArgs) Handles Me.Shown
+        If My.Settings.FirstRun Then
+            My.Settings.FirstRun = False
+            My.Settings.Save()
+            frm_About.ShowDialog()
+        End If
+    End Sub
 End Class
 Public Enum ExportFormat
     Word
