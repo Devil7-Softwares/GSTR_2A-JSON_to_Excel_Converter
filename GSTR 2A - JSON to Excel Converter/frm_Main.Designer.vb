@@ -151,7 +151,7 @@ Partial Class frm_Main
         Me.btn_Other.ActAsDropDown = True
         Me.btn_Other.ButtonStyle = DevExpress.XtraBars.BarButtonStyle.DropDown
         Me.btn_Other.Caption = "Other Formats"
-        Me.btn_Other.DropDownControl = Me.menu_Excel
+        Me.btn_Other.DropDownControl = Me.menu_Others
         Me.btn_Other.Id = 8
         Me.btn_Other.ImageOptions.Image = Global.GSTR_2A___JSON_to_Excel_Converter.My.Resources.Resources.export_others
         Me.btn_Other.ImageOptions.LargeImage = Global.GSTR_2A___JSON_to_Excel_Converter.My.Resources.Resources.export_others
@@ -331,9 +331,7 @@ Partial Class frm_Main
         '
         'OpenJSONFiles
         '
-        Me.OpenJSONFiles.FileName = "*.json"
         Me.OpenJSONFiles.Filter = "All Supported Formats|*.json;*.zip|JSON Files|*.json|ZIP Archives|*.zip"
-        Me.OpenJSONFiles.FilterIndex = 0
         Me.OpenJSONFiles.Multiselect = True
         Me.OpenJSONFiles.Title = "Select GSTR 2A JSON/ZIP Files"
         '
