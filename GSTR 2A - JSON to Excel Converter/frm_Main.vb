@@ -331,6 +331,10 @@ Public Class frm_Main
     Private Sub btn_Excel_XLSX_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles btn_Excel_XLSX.ItemClick
         Export(ExportFormat.XLSX)
     End Sub
+
+    Private Sub btn_Clear_ItemClick(sender As System.Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles btn_Clear.ItemClick
+        lst_Json.Items.Clear()
+    End Sub
 End Class
 Public Enum ExportFormat
     Word
