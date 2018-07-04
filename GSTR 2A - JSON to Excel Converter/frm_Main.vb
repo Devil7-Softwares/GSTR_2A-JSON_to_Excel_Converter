@@ -358,6 +358,9 @@ Public Class frm_Main
 
     Private Sub frm_Main_FormClosing(sender As Object, e As System.Windows.Forms.FormClosingEventArgs) Handles Me.FormClosing
         My.Settings.Skin = GetSkin.Name
+        My.Settings.WindowSize = Me.Size
+        My.Settings.WindowLocation = Me.Location
+        My.Settings.WindowState = Me.WindowState
         My.Settings.Save()
     End Sub
 
@@ -377,6 +380,9 @@ Public Class frm_Main
 
             End Try
         End If
+        Me.Size = My.Settings.WindowSize
+        Me.Location = My.Settings.WindowLocation
+        Me.WindowState = My.Settings.WindowState
     End Sub
 End Class
 Public Enum ExportFormat

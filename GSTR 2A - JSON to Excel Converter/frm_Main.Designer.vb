@@ -122,7 +122,7 @@ Partial Class frm_Main
         Me.RibbonControl.ShowCategoryInCaption = False
         Me.RibbonControl.ShowExpandCollapseButton = DevExpress.Utils.DefaultBoolean.[False]
         Me.RibbonControl.ShowToolbarCustomizeItem = False
-        Me.RibbonControl.Size = New System.Drawing.Size(671, 143)
+        Me.RibbonControl.Size = New System.Drawing.Size(590, 143)
         Me.RibbonControl.StatusBar = Me.RibbonStatusBar
         Me.RibbonControl.Toolbar.ShowCustomizeItem = False
         '
@@ -417,10 +417,10 @@ Partial Class frm_Main
         '
         'RibbonStatusBar
         '
-        Me.RibbonStatusBar.Location = New System.Drawing.Point(0, 418)
+        Me.RibbonStatusBar.Location = New System.Drawing.Point(0, 408)
         Me.RibbonStatusBar.Name = "RibbonStatusBar"
         Me.RibbonStatusBar.Ribbon = Me.RibbonControl
-        Me.RibbonStatusBar.Size = New System.Drawing.Size(671, 31)
+        Me.RibbonStatusBar.Size = New System.Drawing.Size(590, 31)
         '
         'GroupControl1
         '
@@ -428,7 +428,7 @@ Partial Class frm_Main
         Me.GroupControl1.Dock = System.Windows.Forms.DockStyle.Top
         Me.GroupControl1.Location = New System.Drawing.Point(0, 143)
         Me.GroupControl1.Name = "GroupControl1"
-        Me.GroupControl1.Size = New System.Drawing.Size(671, 119)
+        Me.GroupControl1.Size = New System.Drawing.Size(590, 119)
         Me.GroupControl1.TabIndex = 2
         Me.GroupControl1.Text = "JSON Files (Use 'Add' Button or 'Drag n Drop' Files)"
         '
@@ -439,7 +439,7 @@ Partial Class frm_Main
         Me.lst_Json.FormattingEnabled = True
         Me.lst_Json.Location = New System.Drawing.Point(2, 20)
         Me.lst_Json.Name = "lst_Json"
-        Me.lst_Json.Size = New System.Drawing.Size(667, 97)
+        Me.lst_Json.Size = New System.Drawing.Size(586, 97)
         Me.lst_Json.TabIndex = 1
         '
         'SplitterControl1
@@ -447,7 +447,7 @@ Partial Class frm_Main
         Me.SplitterControl1.Dock = System.Windows.Forms.DockStyle.Top
         Me.SplitterControl1.Location = New System.Drawing.Point(0, 262)
         Me.SplitterControl1.Name = "SplitterControl1"
-        Me.SplitterControl1.Size = New System.Drawing.Size(671, 5)
+        Me.SplitterControl1.Size = New System.Drawing.Size(590, 5)
         Me.SplitterControl1.TabIndex = 3
         Me.SplitterControl1.TabStop = False
         '
@@ -457,7 +457,7 @@ Partial Class frm_Main
         Me.tb_Sheets.HeaderLocation = DevExpress.XtraTab.TabHeaderLocation.Bottom
         Me.tb_Sheets.Location = New System.Drawing.Point(0, 267)
         Me.tb_Sheets.Name = "tb_Sheets"
-        Me.tb_Sheets.Size = New System.Drawing.Size(671, 151)
+        Me.tb_Sheets.Size = New System.Drawing.Size(590, 141)
         Me.tb_Sheets.TabIndex = 4
         '
         'GridControl1
@@ -485,7 +485,7 @@ Partial Class frm_Main
         Me.ProgressPanel.Dock = System.Windows.Forms.DockStyle.Fill
         Me.ProgressPanel.Location = New System.Drawing.Point(0, 267)
         Me.ProgressPanel.Name = "ProgressPanel"
-        Me.ProgressPanel.Size = New System.Drawing.Size(671, 151)
+        Me.ProgressPanel.Size = New System.Drawing.Size(590, 141)
         Me.ProgressPanel.TabIndex = 7
         Me.ProgressPanel.Visible = False
         '
@@ -511,7 +511,7 @@ Partial Class frm_Main
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(671, 449)
+        Me.ClientSize = New System.Drawing.Size(590, 439)
         Me.Controls.Add(Me.ProgressPanel)
         Me.Controls.Add(Me.tb_Sheets)
         Me.Controls.Add(Me.SplitterControl1)
@@ -519,6 +519,7 @@ Partial Class frm_Main
         Me.Controls.Add(Me.RibbonStatusBar)
         Me.Controls.Add(Me.RibbonControl)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
+        Me.MinimumSize = New System.Drawing.Size(600, 440)
         Me.Name = "frm_Main"
         Me.Ribbon = Me.RibbonControl
         Me.StatusBar = Me.RibbonStatusBar

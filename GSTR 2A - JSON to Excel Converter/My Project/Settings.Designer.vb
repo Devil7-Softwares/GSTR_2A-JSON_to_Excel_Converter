@@ -77,6 +77,42 @@ Namespace My
                 Me("FirstRun") = value
             End Set
         End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("0, 0")>  _
+        Public Property WindowSize() As Global.System.Drawing.Size
+            Get
+                Return CType(Me("WindowSize"),Global.System.Drawing.Size)
+            End Get
+            Set
+                Me("WindowSize") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("0, 0")>  _
+        Public Property WindowLocation() As Global.System.Drawing.Point
+            Get
+                Return CType(Me("WindowLocation"),Global.System.Drawing.Point)
+            End Get
+            Set
+                Me("WindowLocation") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("Maximized")>  _
+        Public Property WindowState() As Global.System.Windows.Forms.FormWindowState
+            Get
+                Return CType(Me("WindowState"),Global.System.Windows.Forms.FormWindowState)
+            End Get
+            Set
+                Me("WindowState") = value
+            End Set
+        End Property
     End Class
 End Namespace
 
