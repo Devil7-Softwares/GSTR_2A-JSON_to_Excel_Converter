@@ -156,7 +156,7 @@ Public Class frm_Main
         GridView.OptionsBehavior.Editable = False
         GridView.OptionsView.ShowGroupPanel = False
 
-        Dim GridControl As GridControl = New GridControl With {.MainView = GridView, .DataSource = Data, .Dock = DockStyle.Fill}
+        Dim GridControl As GridControl = New GridControl With {.MainView = GridView, .DataSource = Data, .Dock = DockStyle.Fill, .Tag = SheetName}
 
         Page.Controls.Add(GridControl)
         Page.Tag = GridControl
@@ -171,4 +171,93 @@ Public Class frm_Main
         End If
     End Sub
 
+    Function GetGridControl(ByVal PageIndex As Integer) As GridControl
+        Dim Page = tb_Sheets.TabPages.Item(PageIndex)
+        If TypeOf Page.Tag Is GridControl Then
+            Return Page.Tag
+        End If
+        Return Nothing
+    End Function
+
+    Private Sub btn_Word_ItemClick(sender As System.Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles btn_Word.ItemClick
+        Export(ExportFormat.Word)
+    End Sub
+
+    Sub Export(ByVal Format As ExportFormat)
+        Dim Ext = SetupSaveDialog(Format)
+        If tb_Sheets.TabPages.Count = 1 Then
+            If SaveFileDlg.ShowDialog = Windows.Forms.DialogResult.OK Then
+                Dim GC As GridControl = GetGridControl(0)
+                SaveFile(GC, Format, SaveFileDlg.FileName)
+            End If
+        ElseIf tb_Sheets.TabPages.Count > 1 Then
+            If SelectExportFolder.ShowDialog = Windows.Forms.DialogResult.OK Then
+                For i As Integer = 0 To tb_Sheets.TabPages.Count - 1
+                    tb_Sheets.SelectedTabPageIndex = i
+                    Application.DoEvents()
+                    Dim GC As GridControl = GetGridControl(i)
+                    SaveFile(GC, Format, IO.Path.Combine(SelectExportFolder.SelectedPath, GC.Tag.ToString & "." & Ext))
+                Next
+            End If
+        Else
+            MsgBox("No data to export. Pleas add json files & process before exporting", MsgBoxStyle.Exclamation + MsgBoxStyle.OkOnly, "Error")
+        End If
+    End Sub
+    Sub SaveFile(ByVal GC As GridControl, ByVal Format As ExportFormat, ByVal Filename As String)
+        Select Case Format
+            Case ExportFormat.Word
+                GC.ExportToDocx(Filename)
+            Case ExportFormat.PDF
+                GC.ExportToPdf(Filename)
+            Case ExportFormat.CSV
+                GC.ExportToCsv(Filename)
+            Case ExportFormat.HTML
+                GC.ExportToHtml(Filename)
+            Case ExportFormat.MHTML
+                GC.ExportToMht(Filename)
+            Case ExportFormat.RTF
+                GC.ExportToRtf(Filename)
+            Case ExportFormat.TXT
+                GC.ExportToText(Filename)
+        End Select
+    End Sub
+    Function SetupSaveDialog(ByVal Format As ExportFormat) As String
+        Dim Extenstion As String = ""
+        Dim Filter As String = ""
+        Select Case Format
+            Case ExportFormat.Word
+                Extenstion = "docx"
+                Filter = "Microsoft Word Document Files (*.docx)|*.docx"
+            Case ExportFormat.PDF
+                Extenstion = "pdf"
+                Filter = "Adobe Portable Document Files (*.pdf)|*.pdf"
+            Case ExportFormat.CSV
+                Extenstion = "docx"
+                Filter = "Comma Separated Values File (*.csv)|*.csv"
+            Case ExportFormat.HTML
+                Extenstion = "html"
+                Filter = "HTML Webpage Files (*.html)|*.html"
+            Case ExportFormat.MHTML
+                Extenstion = "mhtml"
+                Filter = "Microsoft Webpage Files (*.mhtml)|*.mhtml"
+            Case ExportFormat.RTF
+                Extenstion = "rtf"
+                Filter = "Rich Text Format (*.rtf)|*.rtf"
+            Case ExportFormat.TXT
+                Extenstion = "txt"
+                Filter = "Plain Text Files (*.txt)|*.txt"
+        End Select
+        SaveFileDlg.DefaultExt = Extenstion
+        SaveFileDlg.Filter = Filter
+        Return Extenstion
+    End Function
 End Class
+Public Enum ExportFormat
+    Word
+    PDF
+    CSV
+    HTML
+    MHTML
+    RTF
+    TXT
+End Enum

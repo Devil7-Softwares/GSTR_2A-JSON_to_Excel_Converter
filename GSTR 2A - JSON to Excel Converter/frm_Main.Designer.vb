@@ -54,6 +54,8 @@ Partial Class frm_Main
         Me.ProgressPanel = New DevExpress.XtraWaitForm.ProgressPanel()
         Me.OpenJSONFiles = New System.Windows.Forms.OpenFileDialog()
         Me.JSONReader = New System.ComponentModel.BackgroundWorker()
+        Me.SaveFileDlg = New System.Windows.Forms.SaveFileDialog()
+        Me.SelectExportFolder = New System.Windows.Forms.FolderBrowserDialog()
         CType(Me.RibbonControl, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.menu_Excel, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GroupControl1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -338,6 +340,15 @@ Partial Class frm_Main
         'JSONReader
         '
         '
+        'SaveFileDlg
+        '
+        Me.SaveFileDlg.DefaultExt = "docx"
+        Me.SaveFileDlg.Filter = "Microsoft Office Word Documents|*.docx"
+        '
+        'SelectExportFolder
+        '
+        Me.SelectExportFolder.Description = "Select Folder to Export Files"
+        '
         'frm_Main
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -400,6 +411,8 @@ Partial Class frm_Main
     Friend WithEvents rpg_Process As DevExpress.XtraBars.Ribbon.RibbonPageGroup
     Friend WithEvents btn_Combine As DevExpress.XtraBars.BarButtonItem
     Friend WithEvents JSONReader As System.ComponentModel.BackgroundWorker
+    Friend WithEvents SaveFileDlg As System.Windows.Forms.SaveFileDialog
+    Friend WithEvents SelectExportFolder As System.Windows.Forms.FolderBrowserDialog
 
 
 End Class
