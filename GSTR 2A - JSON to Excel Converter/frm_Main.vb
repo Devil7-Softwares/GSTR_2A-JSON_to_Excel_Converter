@@ -191,13 +191,15 @@ Public Class frm_Main
                 SaveFile(GC, Format, SaveFileDlg.FileName)
             End If
         ElseIf tb_Sheets.TabPages.Count > 1 Then
-            If SelectExportFolder.ShowDialog = Windows.Forms.DialogResult.OK Then
-                For i As Integer = 0 To tb_Sheets.TabPages.Count - 1
-                    tb_Sheets.SelectedTabPageIndex = i
-                    Application.DoEvents()
-                    Dim GC As GridControl = GetGridControl(i)
-                    SaveFile(GC, Format, IO.Path.Combine(SelectExportFolder.SelectedPath, GC.Tag.ToString & "." & Ext))
-                Next
+            If Format <> ExportFormat.XLS AndAlso Format <> ExportFormat.XLSX Then
+                If SelectExportFolder.ShowDialog = Windows.Forms.DialogResult.OK Then
+                    For i As Integer = 0 To tb_Sheets.TabPages.Count - 1
+                        tb_Sheets.SelectedTabPageIndex = i
+                        Application.DoEvents()
+                        Dim GC As GridControl = GetGridControl(i)
+                        SaveFile(GC, Format, IO.Path.Combine(SelectExportFolder.SelectedPath, GC.Tag.ToString & "." & Ext))
+                    Next
+                End If
             End If
         Else
             MsgBox("No data to export. Pleas add json files & process before exporting", MsgBoxStyle.Exclamation + MsgBoxStyle.OkOnly, "Error")
@@ -219,6 +221,10 @@ Public Class frm_Main
                 GC.ExportToRtf(Filename)
             Case ExportFormat.TXT
                 GC.ExportToText(Filename)
+            Case ExportFormat.XLS
+                GC.ExportToXls(Filename)
+            Case ExportFormat.XLSX
+                GC.ExportToXlsx(Filename)
         End Select
     End Sub
     Function SetupSaveDialog(ByVal Format As ExportFormat) As String
@@ -246,6 +252,12 @@ Public Class frm_Main
             Case ExportFormat.TXT
                 Extenstion = "txt"
                 Filter = "Plain Text Files (*.txt)|*.txt"
+            Case ExportFormat.XLS
+                Extenstion = "xls"
+                Filter = "Microsoft Excel 97-2003 Spreadsheet File (*.xls)|*.xls"
+            Case ExportFormat.XLSX
+                Extenstion = "xlsx"
+                Filter = "Microsoft Excel 2007 Spreadsheet File (*.xlsx)|*.xlsx"
         End Select
         SaveFileDlg.DefaultExt = Extenstion
         SaveFileDlg.Filter = Filter
@@ -276,6 +288,18 @@ Public Class frm_Main
     Private Sub btn_TXT_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles btn_TXT.ItemClick
         Export(ExportFormat.TXT)
     End Sub
+
+    Private Sub btn_Excel_ItemClick(sender As System.Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles btn_Excel.ItemClick
+        Export(ExportFormat.XLSX)
+    End Sub
+
+    Private Sub btn_Excel_XLS_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles btn_Excel_XLS.ItemClick
+        Export(ExportFormat.XLS)
+    End Sub
+
+    Private Sub btn_Excel_XLSX_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles btn_Excel_XLSX.ItemClick
+        Export(ExportFormat.XLSX)
+    End Sub
 End Class
 Public Enum ExportFormat
     Word
@@ -285,4 +309,6 @@ Public Enum ExportFormat
     MHTML
     RTF
     TXT
+    XLSX
+    XLS
 End Enum

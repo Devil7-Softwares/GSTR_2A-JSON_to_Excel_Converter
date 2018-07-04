@@ -31,6 +31,7 @@ Partial Class frm_Main
         Me.btn_Excel_XLSX = New DevExpress.XtraBars.BarButtonItem()
         Me.btn_Word = New DevExpress.XtraBars.BarButtonItem()
         Me.btn_Other = New DevExpress.XtraBars.BarButtonItem()
+        Me.menu_Others = New DevExpress.XtraBars.PopupMenu(Me.components)
         Me.btn_CSV = New DevExpress.XtraBars.BarButtonItem()
         Me.btn_HTML = New DevExpress.XtraBars.BarButtonItem()
         Me.btn_MHT = New DevExpress.XtraBars.BarButtonItem()
@@ -50,7 +51,6 @@ Partial Class frm_Main
         Me.tb_Sheets = New DevExpress.XtraTab.XtraTabControl()
         Me.GridControl1 = New DevExpress.XtraGrid.GridControl()
         Me.GridView1 = New DevExpress.XtraGrid.Views.Grid.GridView()
-        Me.menu_Others = New DevExpress.XtraBars.PopupMenu(Me.components)
         Me.ProgressPanel = New DevExpress.XtraWaitForm.ProgressPanel()
         Me.OpenJSONFiles = New System.Windows.Forms.OpenFileDialog()
         Me.JSONReader = New System.ComponentModel.BackgroundWorker()
@@ -58,12 +58,12 @@ Partial Class frm_Main
         Me.SelectExportFolder = New System.Windows.Forms.FolderBrowserDialog()
         CType(Me.RibbonControl, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.menu_Excel, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.menu_Others, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GroupControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupControl1.SuspendLayout()
         CType(Me.tb_Sheets, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GridControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GridView1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.menu_Others, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'RibbonControl
@@ -156,6 +156,16 @@ Partial Class frm_Main
         Me.btn_Other.ImageOptions.Image = Global.GSTR_2A___JSON_to_Excel_Converter.My.Resources.Resources.export_others
         Me.btn_Other.ImageOptions.LargeImage = Global.GSTR_2A___JSON_to_Excel_Converter.My.Resources.Resources.export_others
         Me.btn_Other.Name = "btn_Other"
+        '
+        'menu_Others
+        '
+        Me.menu_Others.ItemLinks.Add(Me.btn_CSV)
+        Me.menu_Others.ItemLinks.Add(Me.btn_HTML)
+        Me.menu_Others.ItemLinks.Add(Me.btn_MHT)
+        Me.menu_Others.ItemLinks.Add(Me.btn_RTF)
+        Me.menu_Others.ItemLinks.Add(Me.btn_TXT)
+        Me.menu_Others.Name = "menu_Others"
+        Me.menu_Others.Ribbon = Me.RibbonControl
         '
         'btn_CSV
         '
@@ -305,16 +315,6 @@ Partial Class frm_Main
         Me.GridView1.GridControl = Me.GridControl1
         Me.GridView1.Name = "GridView1"
         '
-        'menu_Others
-        '
-        Me.menu_Others.ItemLinks.Add(Me.btn_CSV)
-        Me.menu_Others.ItemLinks.Add(Me.btn_HTML)
-        Me.menu_Others.ItemLinks.Add(Me.btn_MHT)
-        Me.menu_Others.ItemLinks.Add(Me.btn_RTF)
-        Me.menu_Others.ItemLinks.Add(Me.btn_TXT)
-        Me.menu_Others.Name = "menu_Others"
-        Me.menu_Others.Ribbon = Me.RibbonControl
-        '
         'ProgressPanel
         '
         Me.ProgressPanel.Appearance.BackColor = System.Drawing.Color.Transparent
@@ -365,12 +365,12 @@ Partial Class frm_Main
         Me.Text = "GSTR 2A - JSON to Excel Converter"
         CType(Me.RibbonControl, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.menu_Excel, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.menu_Others, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GroupControl1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupControl1.ResumeLayout(False)
         CType(Me.tb_Sheets, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GridControl1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GridView1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.menu_Others, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
