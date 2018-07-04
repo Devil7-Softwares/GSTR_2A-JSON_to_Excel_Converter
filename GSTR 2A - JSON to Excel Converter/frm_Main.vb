@@ -351,6 +351,10 @@ Public Class frm_Main
     Private Sub btn_Clear_ItemClick(sender As System.Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles btn_Clear.ItemClick
         lst_Json.Items.Clear()
     End Sub
+
+    Private Sub btn_About_ItemClick(sender As System.Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles btn_About.ItemClick
+        frm_About.ShowDialog()
+    End Sub
 End Class
 Public Enum ExportFormat
     Word

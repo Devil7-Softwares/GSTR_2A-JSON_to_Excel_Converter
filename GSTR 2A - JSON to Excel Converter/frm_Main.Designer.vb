@@ -75,10 +75,15 @@ Partial Class frm_Main
         Me.btn_PDF = New DevExpress.XtraBars.BarButtonItem()
         Me.btn_ReadJSON = New DevExpress.XtraBars.BarButtonItem()
         Me.btn_Combine = New DevExpress.XtraBars.BarButtonItem()
+        Me.SkinRibbonGalleryBarItem1 = New DevExpress.XtraBars.SkinRibbonGalleryBarItem()
+        Me.btn_About = New DevExpress.XtraBars.BarButtonItem()
         Me.rp_Home = New DevExpress.XtraBars.Ribbon.RibbonPage()
         Me.rpg_JSON = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
         Me.rpg_Process = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
         Me.rpg_Export = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
+        Me.rp_Misc = New DevExpress.XtraBars.Ribbon.RibbonPage()
+        Me.rpg_Skin = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
+        Me.rpg_Info = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
         Me.RibbonStatusBar = New DevExpress.XtraBars.Ribbon.RibbonStatusBar()
         Me.GroupControl1 = New DevExpress.XtraEditors.GroupControl()
         Me.lst_Json = New System.Windows.Forms.ListBox()
@@ -107,11 +112,11 @@ Partial Class frm_Main
         Me.RibbonControl.AllowMinimizeRibbon = False
         Me.RibbonControl.AllowTrimPageText = False
         Me.RibbonControl.ExpandCollapseItem.Id = 0
-        Me.RibbonControl.Items.AddRange(New DevExpress.XtraBars.BarItem() {Me.RibbonControl.ExpandCollapseItem, Me.btn_Add, Me.btn_Remove, Me.btn_Clear, Me.btn_Excel, Me.btn_Excel_XLS, Me.btn_Excel_XLSX, Me.btn_Word, Me.btn_Other, Me.btn_CSV, Me.btn_HTML, Me.btn_MHT, Me.btn_RTF, Me.btn_TXT, Me.btn_PDF, Me.btn_ReadJSON, Me.btn_Combine})
+        Me.RibbonControl.Items.AddRange(New DevExpress.XtraBars.BarItem() {Me.RibbonControl.ExpandCollapseItem, Me.btn_Add, Me.btn_Remove, Me.btn_Clear, Me.btn_Excel, Me.btn_Excel_XLS, Me.btn_Excel_XLSX, Me.btn_Word, Me.btn_Other, Me.btn_CSV, Me.btn_HTML, Me.btn_MHT, Me.btn_RTF, Me.btn_TXT, Me.btn_PDF, Me.btn_ReadJSON, Me.btn_Combine, Me.SkinRibbonGalleryBarItem1, Me.btn_About})
         Me.RibbonControl.Location = New System.Drawing.Point(0, 0)
-        Me.RibbonControl.MaxItemId = 17
+        Me.RibbonControl.MaxItemId = 19
         Me.RibbonControl.Name = "RibbonControl"
-        Me.RibbonControl.Pages.AddRange(New DevExpress.XtraBars.Ribbon.RibbonPage() {Me.rp_Home})
+        Me.RibbonControl.Pages.AddRange(New DevExpress.XtraBars.Ribbon.RibbonPage() {Me.rp_Home, Me.rp_Misc})
         Me.RibbonControl.ShowApplicationButton = DevExpress.Utils.DefaultBoolean.[False]
         Me.RibbonControl.ShowCategoryInCaption = False
         Me.RibbonControl.ShowExpandCollapseButton = DevExpress.Utils.DefaultBoolean.[False]
@@ -342,6 +347,20 @@ Partial Class frm_Main
         SuperToolTip9.Items.Add(ToolTipItem9)
         Me.btn_Combine.SuperTip = SuperToolTip9
         '
+        'SkinRibbonGalleryBarItem1
+        '
+        Me.SkinRibbonGalleryBarItem1.Caption = "SkinRibbonGalleryBarItem1"
+        Me.SkinRibbonGalleryBarItem1.Id = 17
+        Me.SkinRibbonGalleryBarItem1.Name = "SkinRibbonGalleryBarItem1"
+        '
+        'btn_About
+        '
+        Me.btn_About.Caption = "About && Contact"
+        Me.btn_About.Id = 18
+        Me.btn_About.ImageOptions.Image = Global.GSTR_2A___JSON_to_Excel_Converter.My.Resources.Resources.info
+        Me.btn_About.ImageOptions.LargeImage = Global.GSTR_2A___JSON_to_Excel_Converter.My.Resources.Resources.info
+        Me.btn_About.Name = "btn_About"
+        '
         'rp_Home
         '
         Me.rp_Home.Groups.AddRange(New DevExpress.XtraBars.Ribbon.RibbonPageGroup() {Me.rpg_JSON, Me.rpg_Process, Me.rpg_Export})
@@ -362,6 +381,7 @@ Partial Class frm_Main
         Me.rpg_Process.ItemLinks.Add(Me.btn_ReadJSON)
         Me.rpg_Process.ItemLinks.Add(Me.btn_Combine, True)
         Me.rpg_Process.Name = "rpg_Process"
+        Me.rpg_Process.ShowCaptionButton = False
         Me.rpg_Process.Text = "Process"
         '
         'rpg_Export
@@ -373,6 +393,26 @@ Partial Class frm_Main
         Me.rpg_Export.Name = "rpg_Export"
         Me.rpg_Export.ShowCaptionButton = False
         Me.rpg_Export.Text = "Export"
+        '
+        'rp_Misc
+        '
+        Me.rp_Misc.Groups.AddRange(New DevExpress.XtraBars.Ribbon.RibbonPageGroup() {Me.rpg_Skin, Me.rpg_Info})
+        Me.rp_Misc.Name = "rp_Misc"
+        Me.rp_Misc.Text = "Misc"
+        '
+        'rpg_Skin
+        '
+        Me.rpg_Skin.ItemLinks.Add(Me.SkinRibbonGalleryBarItem1)
+        Me.rpg_Skin.Name = "rpg_Skin"
+        Me.rpg_Skin.ShowCaptionButton = False
+        Me.rpg_Skin.Text = "Skin"
+        '
+        'rpg_Info
+        '
+        Me.rpg_Info.ItemLinks.Add(Me.btn_About)
+        Me.rpg_Info.Name = "rpg_Info"
+        Me.rpg_Info.ShowCaptionButton = False
+        Me.rpg_Info.Text = "Info"
         '
         'RibbonStatusBar
         '
@@ -530,6 +570,11 @@ Partial Class frm_Main
     Friend WithEvents JSONReader As System.ComponentModel.BackgroundWorker
     Friend WithEvents SaveFileDlg As System.Windows.Forms.SaveFileDialog
     Friend WithEvents SelectExportFolder As System.Windows.Forms.FolderBrowserDialog
+    Friend WithEvents rp_Misc As DevExpress.XtraBars.Ribbon.RibbonPage
+    Friend WithEvents rpg_Skin As DevExpress.XtraBars.Ribbon.RibbonPageGroup
+    Friend WithEvents SkinRibbonGalleryBarItem1 As DevExpress.XtraBars.SkinRibbonGalleryBarItem
+    Friend WithEvents rpg_Info As DevExpress.XtraBars.Ribbon.RibbonPageGroup
+    Friend WithEvents btn_About As DevExpress.XtraBars.BarButtonItem
 
 
 End Class

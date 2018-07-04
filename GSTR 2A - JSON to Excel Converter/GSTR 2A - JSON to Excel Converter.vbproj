@@ -102,6 +102,12 @@
     <Compile Include="Classess\JSON\JSONFile.vb" />
     <Compile Include="Classess\JSON\Returns.vb" />
     <Compile Include="Classess\PublicFunctions.vb" />
+    <Compile Include="frm_About.Designer.vb">
+      <DependentUpon>frm_About.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frm_About.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="frm_Main.Designer.vb">
       <DependentUpon>frm_Main.vb</DependentUpon>
     </Compile>
@@ -123,8 +129,14 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="XtraFormTemp.vb">
+      <SubType>Form</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="frm_About.resx">
+      <DependentUpon>frm_About.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frm_Main.resx">
       <DependentUpon>frm_Main.vb</DependentUpon>
     </EmbeddedResource>
@@ -150,6 +162,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="icon.ico" />
+    <None Include="Resources\icon.png" />
+    <None Include="Resources\info.ico" />
     <None Include="Resources\combine.ico" />
     <None Include="Resources\process.ico" />
     <None Include="Resources\export_pdf.ico" />
