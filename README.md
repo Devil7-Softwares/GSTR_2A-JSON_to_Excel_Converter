@@ -22,3 +22,7 @@ This tool was a part of my automation projects (well... we can call it laziness)
 ![Misc](screenshots/ScreenShot_2.PNG)
 
 ![About](screenshots/ScreenShot_3.PNG)
+
+![WithCombinedMode](screenshots/ScreenShot_4.png)
+
+![WithoutCombinedMode](screenshots/ScreenShot_5.png)
