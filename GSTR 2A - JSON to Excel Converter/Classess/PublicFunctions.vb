@@ -35,7 +35,7 @@ Module PublicFunctions
                 invoice.Value = inv.SelectToken("val")
                 invoice.InvoiceType = inv.SelectToken("inv_typ")
                 invoice.State = inv.SelectToken("pos")
-                invoice.InvoiceDate = Date.Parse(inv.SelectToken("idt"))
+                invoice.InvoiceDate = Date.ParseExact(inv.SelectToken("idt"), {"dd/MM/yyyy", "d/M/yyyy", "dd-MM-yyyy", "d-M-yyyy"}, System.Globalization.DateTimeFormatInfo.InvariantInfo, Globalization.DateTimeStyles.None)
                 invoice.ReverseCharge = inv.SelectToken("rchrg")
                 invoice.InvoiceNumber = inv.SelectToken("inum")
                 invoice.GSTChecksum = inv.SelectToken("chksum")
