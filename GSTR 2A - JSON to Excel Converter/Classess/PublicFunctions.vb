@@ -19,6 +19,7 @@ Module PublicFunctions
 #Region "JSON"
 
     Function ReadJson(ByVal JSON_Data As String) As Returns
+        On Error Resume Next
         Dim Returns As New Returns
         Dim json As JObject = JObject.Parse(JSON_Data)
         Returns.GSTIN = json.SelectToken("gstin")
