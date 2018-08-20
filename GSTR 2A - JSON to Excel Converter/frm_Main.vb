@@ -105,16 +105,22 @@ Public Class frm_Main
                             If ent.FileName.ToLower.EndsWith(".json") Then
                                 Dim MS As New IO.MemoryStream
                                 ent.Extract(MS)
-                                AddData(ReadData(MS.ToArray))
+                                Dim Period As String = "XX-XXXX"
+                                Dim Data = ReadData(MS.ToArray, Period)
+                                AddData(Data, Period)
                                 Exit For
                             End If
                         Next
                     End Using
                 Else
-                    AddData(ReadData(My.Computer.FileSystem.ReadAllBytes(filename)))
+                    Dim Period As String = "XX-XXXX"
+                    Dim Data = ReadData(My.Computer.FileSystem.ReadAllBytes(filename), Period)
+                    AddData(Data, Period)
                 End If
             Next
-
+            If Not btn_Combine.Down Then
+                SortTabs(tb_Sheets.TabPages)
+            End If
             EnableControls()
             MsgBox("Successfully parsed given files.", MsgBoxStyle.Information + MsgBoxStyle.OkOnly, "Done")
         Catch ex As Exception
@@ -126,9 +132,10 @@ Public Class frm_Main
                "Additional Information:" & vbNewLine & vbNewLine & _
                Exception.Message & Exception.StackTrace, MsgBoxStyle.Exclamation + MsgBoxStyle.OkOnly, "Error")
     End Sub
-    Private Function ReadData(ByVal Data As Byte()) As List(Of GSTR2AEntry)
+    Private Function ReadData(ByVal Data As Byte(), ByRef Period As String) As List(Of GSTR2AEntry)
         Dim R As New List(Of GSTR2AEntry)
         Dim Returns = ReadJson(System.Text.Encoding.ASCII.GetString(Data))
+        Period = Returns.Period
         For Each i As B2BEntry In Returns.B2BEntries
             For Each Invoice As Invoice In i.Invoices
                 For Each item As Item In Invoice.Items
@@ -139,10 +146,10 @@ Public Class frm_Main
         Return R
     End Function
 
-    Private Sub AddData(ByVal Data As List(Of GSTR2AEntry))
+    Private Sub AddData(ByVal Data As List(Of GSTR2AEntry), ByVal Period As String)
         If Me.InvokeRequired Then
             Me.Invoke(Sub()
-                          AddData(Data)
+                          AddData(Data, Period)
                       End Sub)
         Else
             If btn_Combine.Down Then
@@ -152,8 +159,7 @@ Public Class frm_Main
                     AppendSheet(0, Data)
                 End If
             Else
-                Dim SheetName As String = "GSTR2A - Sheet " & tb_Sheets.TabPages.Count + 1
-                AddSheet(SheetName, Data)
+                AddSheet(If(Period.Length = 6, Period.Insert(2, "-"), Period), Data)
             End If
         End If
     End Sub

@@ -3,6 +3,17 @@ Imports Newtonsoft.Json.Linq
 
 Module PublicFunctions
 
+    Public Sub SortTabs(ByVal sourceTabs As DevExpress.XtraTab.XtraTabPageCollection)
+        Dim tabs As New List(Of DevExpress.XtraTab.XtraTabPage)()
+        For Each page As DevExpress.XtraTab.XtraTabPage In sourceTabs
+            tabs.Add(page)
+        Next page
+        tabs.Sort(New TabComparer)
+        For i As Integer = 0 To tabs.Count - 1
+            sourceTabs.Move(i, tabs(i))
+        Next i
+    End Sub
+
     Function isJsonZIP(ByVal Path As String) As Boolean
         Using zip = ZipFile.Read(Path)
             Dim totalEntries As Integer = zip.Entries.Count
@@ -23,7 +34,7 @@ Module PublicFunctions
         Dim Returns As New Returns
         Dim json As JObject = JObject.Parse(JSON_Data)
         Returns.GSTIN = json.SelectToken("gstin")
-        Returns.GSTIN = json.SelectToken("fp")
+        Returns.Period = json.SelectToken("fp")
         Dim B2B_Entries As JArray = json.SelectToken("b2b").Value(Of JArray)()
         For Each i As JToken In B2B_Entries
             Dim b2b As New B2BEntry

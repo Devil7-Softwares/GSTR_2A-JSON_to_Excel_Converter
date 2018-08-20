@@ -95,6 +95,7 @@
     <Compile Include="Classess\JSON\ItemDetails.vb" />
     <Compile Include="Classess\JSON\JSONFile.vb" />
     <Compile Include="Classess\JSON\Returns.vb" />
+    <Compile Include="Classess\TabComparer.vb" />
     <Compile Include="Classess\PublicFunctions.vb" />
     <Compile Include="frm_About.Designer.vb">
       <DependentUpon>frm_About.vb</DependentUpon>
