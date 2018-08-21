@@ -145,6 +145,21 @@ Public Class frm_Main
             End If
             EnableControls()
             MsgBox("Successfully parsed given files.", MsgBoxStyle.Information + MsgBoxStyle.OkOnly, "Done")
+            My.Settings.ConvertedCount += 1
+            My.Settings.Save()
+            If (My.Settings.ConvertedCount Mod 5) = 0 Then
+                If Not My.Settings.FeedbackShown Then
+                    Dim Result = MsgBox("Every single feedback from users mean a lot to us. Would you mind to spare a minute to write a feedback to us...?" & vbNewLine & vbNewLine & "Click 'No' to never show this dialog again.", MsgBoxStyle.Question + MsgBoxStyle.YesNoCancel, "Feedback")
+                    If Result = MsgBoxResult.Yes Then
+                        Me.Invoke(Sub() btn_Feedback.PerformClick())
+                        My.Settings.FeedbackShown = True
+                        My.Settings.Save()
+                    ElseIf Result = MsgBoxResult.No Then
+                        My.Settings.FeedbackShown = True
+                        My.Settings.Save()
+                    End If
+                End If
+            End If
         Catch ex As Exception
             ShowError("Error on reading json files", ex)
         End Try

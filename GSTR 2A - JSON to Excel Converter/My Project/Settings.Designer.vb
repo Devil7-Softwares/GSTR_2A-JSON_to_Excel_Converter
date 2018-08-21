@@ -113,6 +113,30 @@ Namespace My
                 Me("WindowState") = value
             End Set
         End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("False")>  _
+        Public Property FeedbackShown() As Boolean
+            Get
+                Return CType(Me("FeedbackShown"),Boolean)
+            End Get
+            Set
+                Me("FeedbackShown") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("0")>  _
+        Public Property ConvertedCount() As Integer
+            Get
+                Return CType(Me("ConvertedCount"),Integer)
+            End Get
+            Set
+                Me("ConvertedCount") = value
+            End Set
+        End Property
     End Class
 End Namespace
 
