@@ -70,6 +70,28 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.IO, Version=2.6.10.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Bcl.1.1.10\lib\net40\System.IO.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http, Version=2.2.29.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Net.Http.2.2.29\lib\net40\System.Net.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.Extensions, Version=2.2.29.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Net.Http.2.2.29\lib\net40\System.Net.Http.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.Primitives, Version=2.2.29.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Net.Http.2.2.29\lib\net40\System.Net.Http.Primitives.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest, Version=2.2.29.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Net.Http.2.2.29\lib\net40\System.Net.Http.WebRequest.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime, Version=2.6.10.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Bcl.1.1.10\lib\net40\System.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Threading.Tasks, Version=2.6.10.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Bcl.1.1.10\lib\net40\System.Threading.Tasks.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
@@ -88,6 +110,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ApplicationEvents.vb" />
+    <Compile Include="Classess\FeedBack.vb" />
     <Compile Include="Classess\GSTR2AEntry.vb" />
     <Compile Include="Classess\JSON\B2BEntry.vb" />
     <Compile Include="Classess\JSON\Invoice.vb" />
@@ -95,12 +118,26 @@
     <Compile Include="Classess\JSON\ItemDetails.vb" />
     <Compile Include="Classess\JSON\JSONFile.vb" />
     <Compile Include="Classess\JSON\Returns.vb" />
+    <Compile Include="Classess\Keys.vb" />
+    <Compile Include="Classess\RestAPI.vb" />
     <Compile Include="Classess\TabComparer.vb" />
     <Compile Include="Classess\PublicFunctions.vb" />
-    <Compile Include="frm_About.Designer.vb">
+    <Compile Include="Dialogs\frm_About.Designer.vb">
       <DependentUpon>frm_About.vb</DependentUpon>
     </Compile>
-    <Compile Include="frm_About.vb">
+    <Compile Include="Dialogs\frm_About.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\frm_Feedback.designer.vb">
+      <DependentUpon>frm_Feedback.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\frm_Feedback.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\frm_Wait.designer.vb">
+      <DependentUpon>frm_Wait.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\frm_Wait.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frm_Main.Designer.vb">
@@ -135,8 +172,14 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="frm_About.resx">
+    <EmbeddedResource Include="Dialogs\frm_About.resx">
       <DependentUpon>frm_About.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\frm_Feedback.resx">
+      <DependentUpon>frm_Feedback.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\frm_Wait.resx">
+      <DependentUpon>frm_Wait.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frm_Main.resx">
       <DependentUpon>frm_Main.vb</DependentUpon>
@@ -166,6 +209,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="icon.ico" />
+    <None Include="packages.config" />
     <None Include="Resources\splash.jpg" />
     <None Include="Resources\icon.png" />
   </ItemGroup>
@@ -173,6 +217,11 @@
   <PropertyGroup>
     <PreBuildEvent>break &gt; "$(ProjectDir)My Project\licenses.licx"</PreBuildEvent>
   </PropertyGroup>
+  <Import Project="..\packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets" Condition="Exists('..\packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets')" />
+  <Target Name="EnsureBclBuildImported" BeforeTargets="BeforeBuild" Condition="'$(BclBuildImported)' == ''">
+    <Error Condition="!Exists('..\packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets')" Text="This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=317567." HelpKeyword="BCLBUILD2001" />
+    <Error Condition="Exists('..\packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets')" Text="The build restored NuGet packages. Build the project again to include these packages in the build. For more information, see http://go.microsoft.com/fwlink/?LinkID=317568." HelpKeyword="BCLBUILD2002" />
+  </Target>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">

@@ -390,6 +390,14 @@ Public Class frm_Main
         Me.Location = My.Settings.WindowLocation
         Me.WindowState = My.Settings.WindowState
     End Sub
+
+    Private Sub btn_Feedback_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles btn_Feedback.ItemClick
+        Dim d As New frm_Feedback
+        d.ShowDialog()
+        Me.BringToFront()
+        Me.Focus()
+    End Sub
+
 End Class
 Public Enum ExportFormat
     Word

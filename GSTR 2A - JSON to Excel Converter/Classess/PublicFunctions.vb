@@ -3,6 +3,32 @@ Imports Newtonsoft.Json.Linq
 
 Module PublicFunctions
 
+    Public Function isNetworkConnected(Optional Host As String = "www.google.com") As Boolean
+        If Net.NetworkInformation.NetworkInterface.GetIsNetworkAvailable Then
+            Return My.Computer.Network.Ping(Host)
+        End If
+        Return False
+    End Function
+
+    Function RetrieveLinkerTimestamp() As DateTime
+        Const PeHeaderOffset As Integer = 60
+        Const LinkerTimestampOffset As Integer = 8
+        Dim b(2047) As Byte
+        Dim s As IO.Stream
+        Try
+            s = New IO.FileStream(Application.ExecutablePath, IO.FileMode.Open, IO.FileAccess.Read)
+            s.Read(b, 0, 2048)
+        Finally
+            If Not s Is Nothing Then s.Close()
+        End Try
+        Dim i As Integer = BitConverter.ToInt32(b, PeHeaderOffset)
+        Dim SecondsSince1970 As Integer = BitConverter.ToInt32(b, i + LinkerTimestampOffset)
+        Dim dt As New DateTime(1970, 1, 1, 0, 0, 0)
+        dt = dt.AddSeconds(SecondsSince1970)
+        dt = dt.AddHours(TimeZone.CurrentTimeZone.GetUtcOffset(dt).Hours)
+        Return dt
+    End Function
+
     Public Sub SortTabs(ByVal sourceTabs As DevExpress.XtraTab.XtraTabPageCollection)
         Dim tabs As New List(Of DevExpress.XtraTab.XtraTabPage)()
         For Each page As DevExpress.XtraTab.XtraTabPage In sourceTabs
