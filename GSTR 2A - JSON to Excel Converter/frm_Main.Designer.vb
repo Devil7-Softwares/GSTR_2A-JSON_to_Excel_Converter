@@ -21,41 +21,41 @@ Partial Class frm_Main
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frm_Main))
-        Dim SuperToolTip1 As DevExpress.Utils.SuperToolTip = New DevExpress.Utils.SuperToolTip()
-        Dim ToolTipTitleItem1 As DevExpress.Utils.ToolTipTitleItem = New DevExpress.Utils.ToolTipTitleItem()
-        Dim ToolTipItem1 As DevExpress.Utils.ToolTipItem = New DevExpress.Utils.ToolTipItem()
-        Dim SuperToolTip2 As DevExpress.Utils.SuperToolTip = New DevExpress.Utils.SuperToolTip()
-        Dim ToolTipTitleItem2 As DevExpress.Utils.ToolTipTitleItem = New DevExpress.Utils.ToolTipTitleItem()
-        Dim ToolTipItem2 As DevExpress.Utils.ToolTipItem = New DevExpress.Utils.ToolTipItem()
-        Dim SuperToolTip3 As DevExpress.Utils.SuperToolTip = New DevExpress.Utils.SuperToolTip()
-        Dim ToolTipTitleItem3 As DevExpress.Utils.ToolTipTitleItem = New DevExpress.Utils.ToolTipTitleItem()
-        Dim ToolTipItem3 As DevExpress.Utils.ToolTipItem = New DevExpress.Utils.ToolTipItem()
-        Dim SuperToolTip4 As DevExpress.Utils.SuperToolTip = New DevExpress.Utils.SuperToolTip()
-        Dim ToolTipTitleItem4 As DevExpress.Utils.ToolTipTitleItem = New DevExpress.Utils.ToolTipTitleItem()
-        Dim ToolTipItem4 As DevExpress.Utils.ToolTipItem = New DevExpress.Utils.ToolTipItem()
-        Dim ToolTipSeparatorItem1 As DevExpress.Utils.ToolTipSeparatorItem = New DevExpress.Utils.ToolTipSeparatorItem()
-        Dim ToolTipTitleItem5 As DevExpress.Utils.ToolTipTitleItem = New DevExpress.Utils.ToolTipTitleItem()
-        Dim SuperToolTip5 As DevExpress.Utils.SuperToolTip = New DevExpress.Utils.SuperToolTip()
-        Dim ToolTipTitleItem6 As DevExpress.Utils.ToolTipTitleItem = New DevExpress.Utils.ToolTipTitleItem()
-        Dim ToolTipItem5 As DevExpress.Utils.ToolTipItem = New DevExpress.Utils.ToolTipItem()
-        Dim ToolTipSeparatorItem2 As DevExpress.Utils.ToolTipSeparatorItem = New DevExpress.Utils.ToolTipSeparatorItem()
-        Dim ToolTipTitleItem7 As DevExpress.Utils.ToolTipTitleItem = New DevExpress.Utils.ToolTipTitleItem()
-        Dim SuperToolTip6 As DevExpress.Utils.SuperToolTip = New DevExpress.Utils.SuperToolTip()
-        Dim ToolTipTitleItem8 As DevExpress.Utils.ToolTipTitleItem = New DevExpress.Utils.ToolTipTitleItem()
-        Dim ToolTipItem6 As DevExpress.Utils.ToolTipItem = New DevExpress.Utils.ToolTipItem()
-        Dim ToolTipSeparatorItem3 As DevExpress.Utils.ToolTipSeparatorItem = New DevExpress.Utils.ToolTipSeparatorItem()
-        Dim ToolTipTitleItem9 As DevExpress.Utils.ToolTipTitleItem = New DevExpress.Utils.ToolTipTitleItem()
-        Dim SuperToolTip7 As DevExpress.Utils.SuperToolTip = New DevExpress.Utils.SuperToolTip()
-        Dim ToolTipTitleItem10 As DevExpress.Utils.ToolTipTitleItem = New DevExpress.Utils.ToolTipTitleItem()
-        Dim ToolTipItem7 As DevExpress.Utils.ToolTipItem = New DevExpress.Utils.ToolTipItem()
-        Dim ToolTipSeparatorItem4 As DevExpress.Utils.ToolTipSeparatorItem = New DevExpress.Utils.ToolTipSeparatorItem()
-        Dim ToolTipTitleItem11 As DevExpress.Utils.ToolTipTitleItem = New DevExpress.Utils.ToolTipTitleItem()
-        Dim SuperToolTip8 As DevExpress.Utils.SuperToolTip = New DevExpress.Utils.SuperToolTip()
-        Dim ToolTipTitleItem12 As DevExpress.Utils.ToolTipTitleItem = New DevExpress.Utils.ToolTipTitleItem()
-        Dim ToolTipItem8 As DevExpress.Utils.ToolTipItem = New DevExpress.Utils.ToolTipItem()
-        Dim SuperToolTip9 As DevExpress.Utils.SuperToolTip = New DevExpress.Utils.SuperToolTip()
-        Dim ToolTipTitleItem13 As DevExpress.Utils.ToolTipTitleItem = New DevExpress.Utils.ToolTipTitleItem()
-        Dim ToolTipItem9 As DevExpress.Utils.ToolTipItem = New DevExpress.Utils.ToolTipItem()
+        Dim SuperToolTip19 As DevExpress.Utils.SuperToolTip = New DevExpress.Utils.SuperToolTip()
+        Dim ToolTipTitleItem27 As DevExpress.Utils.ToolTipTitleItem = New DevExpress.Utils.ToolTipTitleItem()
+        Dim ToolTipItem19 As DevExpress.Utils.ToolTipItem = New DevExpress.Utils.ToolTipItem()
+        Dim SuperToolTip20 As DevExpress.Utils.SuperToolTip = New DevExpress.Utils.SuperToolTip()
+        Dim ToolTipTitleItem28 As DevExpress.Utils.ToolTipTitleItem = New DevExpress.Utils.ToolTipTitleItem()
+        Dim ToolTipItem20 As DevExpress.Utils.ToolTipItem = New DevExpress.Utils.ToolTipItem()
+        Dim SuperToolTip21 As DevExpress.Utils.SuperToolTip = New DevExpress.Utils.SuperToolTip()
+        Dim ToolTipTitleItem29 As DevExpress.Utils.ToolTipTitleItem = New DevExpress.Utils.ToolTipTitleItem()
+        Dim ToolTipItem21 As DevExpress.Utils.ToolTipItem = New DevExpress.Utils.ToolTipItem()
+        Dim SuperToolTip22 As DevExpress.Utils.SuperToolTip = New DevExpress.Utils.SuperToolTip()
+        Dim ToolTipTitleItem30 As DevExpress.Utils.ToolTipTitleItem = New DevExpress.Utils.ToolTipTitleItem()
+        Dim ToolTipItem22 As DevExpress.Utils.ToolTipItem = New DevExpress.Utils.ToolTipItem()
+        Dim ToolTipSeparatorItem9 As DevExpress.Utils.ToolTipSeparatorItem = New DevExpress.Utils.ToolTipSeparatorItem()
+        Dim ToolTipTitleItem31 As DevExpress.Utils.ToolTipTitleItem = New DevExpress.Utils.ToolTipTitleItem()
+        Dim SuperToolTip23 As DevExpress.Utils.SuperToolTip = New DevExpress.Utils.SuperToolTip()
+        Dim ToolTipTitleItem32 As DevExpress.Utils.ToolTipTitleItem = New DevExpress.Utils.ToolTipTitleItem()
+        Dim ToolTipItem23 As DevExpress.Utils.ToolTipItem = New DevExpress.Utils.ToolTipItem()
+        Dim ToolTipSeparatorItem10 As DevExpress.Utils.ToolTipSeparatorItem = New DevExpress.Utils.ToolTipSeparatorItem()
+        Dim ToolTipTitleItem33 As DevExpress.Utils.ToolTipTitleItem = New DevExpress.Utils.ToolTipTitleItem()
+        Dim SuperToolTip24 As DevExpress.Utils.SuperToolTip = New DevExpress.Utils.SuperToolTip()
+        Dim ToolTipTitleItem34 As DevExpress.Utils.ToolTipTitleItem = New DevExpress.Utils.ToolTipTitleItem()
+        Dim ToolTipItem24 As DevExpress.Utils.ToolTipItem = New DevExpress.Utils.ToolTipItem()
+        Dim ToolTipSeparatorItem11 As DevExpress.Utils.ToolTipSeparatorItem = New DevExpress.Utils.ToolTipSeparatorItem()
+        Dim ToolTipTitleItem35 As DevExpress.Utils.ToolTipTitleItem = New DevExpress.Utils.ToolTipTitleItem()
+        Dim SuperToolTip25 As DevExpress.Utils.SuperToolTip = New DevExpress.Utils.SuperToolTip()
+        Dim ToolTipTitleItem36 As DevExpress.Utils.ToolTipTitleItem = New DevExpress.Utils.ToolTipTitleItem()
+        Dim ToolTipItem25 As DevExpress.Utils.ToolTipItem = New DevExpress.Utils.ToolTipItem()
+        Dim ToolTipSeparatorItem12 As DevExpress.Utils.ToolTipSeparatorItem = New DevExpress.Utils.ToolTipSeparatorItem()
+        Dim ToolTipTitleItem37 As DevExpress.Utils.ToolTipTitleItem = New DevExpress.Utils.ToolTipTitleItem()
+        Dim SuperToolTip26 As DevExpress.Utils.SuperToolTip = New DevExpress.Utils.SuperToolTip()
+        Dim ToolTipTitleItem38 As DevExpress.Utils.ToolTipTitleItem = New DevExpress.Utils.ToolTipTitleItem()
+        Dim ToolTipItem26 As DevExpress.Utils.ToolTipItem = New DevExpress.Utils.ToolTipItem()
+        Dim SuperToolTip27 As DevExpress.Utils.SuperToolTip = New DevExpress.Utils.SuperToolTip()
+        Dim ToolTipTitleItem39 As DevExpress.Utils.ToolTipTitleItem = New DevExpress.Utils.ToolTipTitleItem()
+        Dim ToolTipItem27 As DevExpress.Utils.ToolTipItem = New DevExpress.Utils.ToolTipItem()
         Me.RibbonControl = New DevExpress.XtraBars.Ribbon.RibbonControl()
         Me.btn_Add = New DevExpress.XtraBars.BarButtonItem()
         Me.btn_Remove = New DevExpress.XtraBars.BarButtonItem()
@@ -135,13 +135,13 @@ Partial Class frm_Main
         Me.btn_Add.Id = 1
         Me.btn_Add.ImageOptions.SvgImage = CType(resources.GetObject("btn_Add.ImageOptions.SvgImage"), DevExpress.Utils.Svg.SvgImage)
         Me.btn_Add.Name = "btn_Add"
-        ToolTipTitleItem1.Text = "Add Json File"
-        ToolTipItem1.LeftIndent = 6
-        ToolTipItem1.Text = "Select JSON file  or ZIP File that contains json in it, downloaded from GST Retur" &
+        ToolTipTitleItem27.Text = "Add Json File"
+        ToolTipItem19.LeftIndent = 6
+        ToolTipItem19.Text = "Select JSON file  or ZIP File that contains json in it, downloaded from GST Retur" &
     "ns site & Add to list of json files to process."
-        SuperToolTip1.Items.Add(ToolTipTitleItem1)
-        SuperToolTip1.Items.Add(ToolTipItem1)
-        Me.btn_Add.SuperTip = SuperToolTip1
+        SuperToolTip19.Items.Add(ToolTipTitleItem27)
+        SuperToolTip19.Items.Add(ToolTipItem19)
+        Me.btn_Add.SuperTip = SuperToolTip19
         '
         'btn_Remove
         '
@@ -149,12 +149,12 @@ Partial Class frm_Main
         Me.btn_Remove.Id = 2
         Me.btn_Remove.ImageOptions.SvgImage = CType(resources.GetObject("btn_Remove.ImageOptions.SvgImage"), DevExpress.Utils.Svg.SvgImage)
         Me.btn_Remove.Name = "btn_Remove"
-        ToolTipTitleItem2.Text = "Remove Json File"
-        ToolTipItem2.LeftIndent = 6
-        ToolTipItem2.Text = "Remove selected files from list of items to process."
-        SuperToolTip2.Items.Add(ToolTipTitleItem2)
-        SuperToolTip2.Items.Add(ToolTipItem2)
-        Me.btn_Remove.SuperTip = SuperToolTip2
+        ToolTipTitleItem28.Text = "Remove Json File"
+        ToolTipItem20.LeftIndent = 6
+        ToolTipItem20.Text = "Remove selected files from list of items to process."
+        SuperToolTip20.Items.Add(ToolTipTitleItem28)
+        SuperToolTip20.Items.Add(ToolTipItem20)
+        Me.btn_Remove.SuperTip = SuperToolTip20
         '
         'btn_Clear
         '
@@ -162,12 +162,12 @@ Partial Class frm_Main
         Me.btn_Clear.Id = 3
         Me.btn_Clear.ImageOptions.SvgImage = CType(resources.GetObject("btn_Clear.ImageOptions.SvgImage"), DevExpress.Utils.Svg.SvgImage)
         Me.btn_Clear.Name = "btn_Clear"
-        ToolTipTitleItem3.Text = "Clear Json Files List"
-        ToolTipItem3.LeftIndent = 6
-        ToolTipItem3.Text = "Clear/Remove all items from list."
-        SuperToolTip3.Items.Add(ToolTipTitleItem3)
-        SuperToolTip3.Items.Add(ToolTipItem3)
-        Me.btn_Clear.SuperTip = SuperToolTip3
+        ToolTipTitleItem29.Text = "Clear Json Files List"
+        ToolTipItem21.LeftIndent = 6
+        ToolTipItem21.Text = "Clear/Remove all items from list."
+        SuperToolTip21.Items.Add(ToolTipTitleItem29)
+        SuperToolTip21.Items.Add(ToolTipItem21)
+        Me.btn_Clear.SuperTip = SuperToolTip21
         '
         'btn_Excel
         '
@@ -177,17 +177,17 @@ Partial Class frm_Main
         Me.btn_Excel.Id = 4
         Me.btn_Excel.ImageOptions.SvgImage = CType(resources.GetObject("btn_Excel.ImageOptions.SvgImage"), DevExpress.Utils.Svg.SvgImage)
         Me.btn_Excel.Name = "btn_Excel"
-        ToolTipTitleItem4.Text = "Export to Excel"
-        ToolTipItem4.LeftIndent = 6
-        ToolTipItem4.Text = "Export Output to Microsoft Excel Spreadsheet format."
-        ToolTipTitleItem5.LeftIndent = 6
-        ToolTipTitleItem5.Text = "If there are multipages/non-combined data, each page will be stored in same file " &
+        ToolTipTitleItem30.Text = "Export to Excel"
+        ToolTipItem22.LeftIndent = 6
+        ToolTipItem22.Text = "Export Output to Microsoft Excel Spreadsheet format."
+        ToolTipTitleItem31.LeftIndent = 6
+        ToolTipTitleItem31.Text = "If there are multipages/non-combined data, each page will be stored in same file " &
     "in different sheets."
-        SuperToolTip4.Items.Add(ToolTipTitleItem4)
-        SuperToolTip4.Items.Add(ToolTipItem4)
-        SuperToolTip4.Items.Add(ToolTipSeparatorItem1)
-        SuperToolTip4.Items.Add(ToolTipTitleItem5)
-        Me.btn_Excel.SuperTip = SuperToolTip4
+        SuperToolTip22.Items.Add(ToolTipTitleItem30)
+        SuperToolTip22.Items.Add(ToolTipItem22)
+        SuperToolTip22.Items.Add(ToolTipSeparatorItem9)
+        SuperToolTip22.Items.Add(ToolTipTitleItem31)
+        Me.btn_Excel.SuperTip = SuperToolTip22
         '
         'menu_Excel
         '
@@ -215,17 +215,17 @@ Partial Class frm_Main
         Me.btn_Word.ImageOptions.SvgImage = CType(resources.GetObject("btn_Word.ImageOptions.SvgImage"), DevExpress.Utils.Svg.SvgImage)
         Me.btn_Word.Name = "btn_Word"
         Me.btn_Word.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText
-        ToolTipTitleItem6.Text = "Export to Word"
-        ToolTipItem5.LeftIndent = 6
-        ToolTipItem5.Text = "Export output data to Microsoft Word Document format."
-        ToolTipTitleItem7.LeftIndent = 6
-        ToolTipTitleItem7.Text = "This will create single file for combined output and multiple files for non-combi" &
+        ToolTipTitleItem32.Text = "Export to Word"
+        ToolTipItem23.LeftIndent = 6
+        ToolTipItem23.Text = "Export output data to Microsoft Word Document format."
+        ToolTipTitleItem33.LeftIndent = 6
+        ToolTipTitleItem33.Text = "This will create single file for combined output and multiple files for non-combi" &
     "ned/multi page output."
-        SuperToolTip5.Items.Add(ToolTipTitleItem6)
-        SuperToolTip5.Items.Add(ToolTipItem5)
-        SuperToolTip5.Items.Add(ToolTipSeparatorItem2)
-        SuperToolTip5.Items.Add(ToolTipTitleItem7)
-        Me.btn_Word.SuperTip = SuperToolTip5
+        SuperToolTip23.Items.Add(ToolTipTitleItem32)
+        SuperToolTip23.Items.Add(ToolTipItem23)
+        SuperToolTip23.Items.Add(ToolTipSeparatorItem10)
+        SuperToolTip23.Items.Add(ToolTipTitleItem33)
+        Me.btn_Word.SuperTip = SuperToolTip23
         '
         'btn_Other
         '
@@ -237,17 +237,17 @@ Partial Class frm_Main
         Me.btn_Other.ImageOptions.SvgImage = CType(resources.GetObject("btn_Other.ImageOptions.SvgImage"), DevExpress.Utils.Svg.SvgImage)
         Me.btn_Other.Name = "btn_Other"
         Me.btn_Other.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText
-        ToolTipTitleItem8.Text = "Export to Other Formats"
-        ToolTipItem6.LeftIndent = 6
-        ToolTipItem6.Text = "Export output data to other formats such as CSV, HTML, MHTML, RTF or TXT."
-        ToolTipTitleItem9.LeftIndent = 6
-        ToolTipTitleItem9.Text = "This will create single file for combined output and multiple files for non-combi" &
+        ToolTipTitleItem34.Text = "Export to Other Formats"
+        ToolTipItem24.LeftIndent = 6
+        ToolTipItem24.Text = "Export output data to other formats such as CSV, HTML, MHTML, RTF or TXT."
+        ToolTipTitleItem35.LeftIndent = 6
+        ToolTipTitleItem35.Text = "This will create single file for combined output and multiple files for non-combi" &
     "ned/multi page output."
-        SuperToolTip6.Items.Add(ToolTipTitleItem8)
-        SuperToolTip6.Items.Add(ToolTipItem6)
-        SuperToolTip6.Items.Add(ToolTipSeparatorItem3)
-        SuperToolTip6.Items.Add(ToolTipTitleItem9)
-        Me.btn_Other.SuperTip = SuperToolTip6
+        SuperToolTip24.Items.Add(ToolTipTitleItem34)
+        SuperToolTip24.Items.Add(ToolTipItem24)
+        SuperToolTip24.Items.Add(ToolTipSeparatorItem11)
+        SuperToolTip24.Items.Add(ToolTipTitleItem35)
+        Me.btn_Other.SuperTip = SuperToolTip24
         '
         'menu_Others
         '
@@ -296,17 +296,17 @@ Partial Class frm_Main
         Me.btn_PDF.ImageOptions.SvgImage = CType(resources.GetObject("btn_PDF.ImageOptions.SvgImage"), DevExpress.Utils.Svg.SvgImage)
         Me.btn_PDF.Name = "btn_PDF"
         Me.btn_PDF.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText
-        ToolTipTitleItem10.Text = "Export to PDF"
-        ToolTipItem7.LeftIndent = 6
-        ToolTipItem7.Text = "Export output to Adobe Portable Document Format i.e. PDF"
-        ToolTipTitleItem11.LeftIndent = 6
-        ToolTipTitleItem11.Text = "This will create single file for combined output and multiple files for non-combi" &
+        ToolTipTitleItem36.Text = "Export to PDF"
+        ToolTipItem25.LeftIndent = 6
+        ToolTipItem25.Text = "Export output to Adobe Portable Document Format i.e. PDF"
+        ToolTipTitleItem37.LeftIndent = 6
+        ToolTipTitleItem37.Text = "This will create single file for combined output and multiple files for non-combi" &
     "ned/multi page output."
-        SuperToolTip7.Items.Add(ToolTipTitleItem10)
-        SuperToolTip7.Items.Add(ToolTipItem7)
-        SuperToolTip7.Items.Add(ToolTipSeparatorItem4)
-        SuperToolTip7.Items.Add(ToolTipTitleItem11)
-        Me.btn_PDF.SuperTip = SuperToolTip7
+        SuperToolTip25.Items.Add(ToolTipTitleItem36)
+        SuperToolTip25.Items.Add(ToolTipItem25)
+        SuperToolTip25.Items.Add(ToolTipSeparatorItem12)
+        SuperToolTip25.Items.Add(ToolTipTitleItem37)
+        Me.btn_PDF.SuperTip = SuperToolTip25
         '
         'btn_ReadJSON
         '
@@ -314,12 +314,12 @@ Partial Class frm_Main
         Me.btn_ReadJSON.Id = 15
         Me.btn_ReadJSON.ImageOptions.SvgImage = CType(resources.GetObject("btn_ReadJSON.ImageOptions.SvgImage"), DevExpress.Utils.Svg.SvgImage)
         Me.btn_ReadJSON.Name = "btn_ReadJSON"
-        ToolTipTitleItem12.Text = "Read JSON"
-        ToolTipItem8.LeftIndent = 6
-        ToolTipItem8.Text = "Read/Process All Files in List."
-        SuperToolTip8.Items.Add(ToolTipTitleItem12)
-        SuperToolTip8.Items.Add(ToolTipItem8)
-        Me.btn_ReadJSON.SuperTip = SuperToolTip8
+        ToolTipTitleItem38.Text = "Read JSON"
+        ToolTipItem26.LeftIndent = 6
+        ToolTipItem26.Text = "Read/Process All Files in List."
+        SuperToolTip26.Items.Add(ToolTipTitleItem38)
+        SuperToolTip26.Items.Add(ToolTipItem26)
+        Me.btn_ReadJSON.SuperTip = SuperToolTip26
         '
         'btn_Combine
         '
@@ -329,12 +329,12 @@ Partial Class frm_Main
         Me.btn_Combine.Id = 16
         Me.btn_Combine.ImageOptions.SvgImage = CType(resources.GetObject("btn_Combine.ImageOptions.SvgImage"), DevExpress.Utils.Svg.SvgImage)
         Me.btn_Combine.Name = "btn_Combine"
-        ToolTipTitleItem13.Text = "Combine All"
-        ToolTipItem9.LeftIndent = 6
-        ToolTipItem9.Text = "Combine the processed result of all files given in list."
-        SuperToolTip9.Items.Add(ToolTipTitleItem13)
-        SuperToolTip9.Items.Add(ToolTipItem9)
-        Me.btn_Combine.SuperTip = SuperToolTip9
+        ToolTipTitleItem39.Text = "Combine All"
+        ToolTipItem27.LeftIndent = 6
+        ToolTipItem27.Text = "Combine the processed result of all files given in list."
+        SuperToolTip27.Items.Add(ToolTipTitleItem39)
+        SuperToolTip27.Items.Add(ToolTipItem27)
+        Me.btn_Combine.SuperTip = SuperToolTip27
         '
         'SkinRibbonGalleryBarItem1
         '
@@ -430,6 +430,7 @@ Partial Class frm_Main
         'lst_Json
         '
         Me.lst_Json.AllowDrop = True
+        Me.lst_Json.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.lst_Json.Dock = System.Windows.Forms.DockStyle.Fill
         Me.lst_Json.FormattingEnabled = True
         Me.lst_Json.Location = New System.Drawing.Point(2, 20)
