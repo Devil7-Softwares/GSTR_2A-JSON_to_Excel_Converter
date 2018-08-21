@@ -8,8 +8,8 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{62BD52D3-1C8A-4E46-A405-37CB15058920}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <StartupObject>GSTR_2A___JSON_to_Excel_Converter.My.MyApplication</StartupObject>
-    <RootNamespace>GSTR_2A___JSON_to_Excel_Converter</RootNamespace>
+    <StartupObject>Devil7.Automation.Converter.JSON2Excel.My.MyApplication</StartupObject>
+    <RootNamespace>Devil7.Automation.Converter.JSON2Excel</RootNamespace>
     <AssemblyName>GSTR 2A - JSON to Excel Converter</AssemblyName>
     <FileAlignment>512</FileAlignment>
     <MyType>WindowsForms</MyType>

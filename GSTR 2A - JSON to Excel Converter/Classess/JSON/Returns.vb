@@ -18,9 +18,11 @@
 '     Dineshkumar T                                                        '
 '=========================================================================='
 
-Public Class Returns
-    Public Property GSTIN As String
-    Public Property FingerPrint As String
-    Public Property B2BEntries As New List(Of B2BEntry)
-    Public Property Period As String
-End Class
+Namespace Classes.JSON
+    Public Class Returns
+        Public Property GSTIN As String
+        Public Property FingerPrint As String
+        Public Property B2BEntries As New List(Of B2BEntry)
+        Public Property Period As String
+    End Class
+End Namespace

@@ -21,6 +21,8 @@
 Imports DevExpress.XtraGrid
 Imports DevExpress.Spreadsheet
 Imports Ionic.Zip
+Imports Devil7.Automation.Converter.JSON2Excel.Classes.JSON
+Imports Devil7.Automation.Converter.JSON2Excel.Classes
 
 Public Class frm_Main
 
@@ -379,7 +381,7 @@ Public Class frm_Main
     End Sub
 
     Private Sub btn_About_ItemClick(sender As System.Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles btn_About.ItemClick
-        frm_About.ShowDialog()
+        Dialogs.frm_About.ShowDialog()
     End Sub
 
     Private Sub frm_Main_FormClosing(sender As Object, e As System.Windows.Forms.FormClosingEventArgs) Handles Me.FormClosing
@@ -394,7 +396,7 @@ Public Class frm_Main
         If My.Settings.FirstRun Then
             My.Settings.FirstRun = False
             My.Settings.Save()
-            frm_About.ShowDialog()
+            Dialogs.frm_About.ShowDialog()
         End If
     End Sub
 
@@ -412,7 +414,7 @@ Public Class frm_Main
     End Sub
 
     Private Sub btn_Feedback_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles btn_Feedback.ItemClick
-        Dim d As New frm_Feedback
+        Dim d As New Dialogs.frm_Feedback
         d.ShowDialog()
         Me.BringToFront()
         Me.Focus()

@@ -38,7 +38,7 @@ Partial Class frm_Splash
         'pictureEdit2
         '
         Me.pictureEdit2.Cursor = System.Windows.Forms.Cursors.Default
-        Me.pictureEdit2.EditValue = Global.GSTR_2A___JSON_to_Excel_Converter.My.Resources.Resources.splash
+        Me.pictureEdit2.EditValue = Global.Devil7.Automation.Converter.JSON2Excel.My.Resources.Resources.splash
         Me.pictureEdit2.Location = New System.Drawing.Point(12, 12)
         Me.pictureEdit2.Name = "pictureEdit2"
         Me.pictureEdit2.Properties.AllowFocused = False
