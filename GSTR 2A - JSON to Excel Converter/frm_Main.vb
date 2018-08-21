@@ -11,7 +11,7 @@ Public Class frm_Main
     End Sub
 
     Private Sub AddJsonFiles(ByVal Files As String())
-        For Each path As String In OpenJSONFiles.FileNames
+        For Each path As String In Files
             If path.ToLower.EndsWith(".json") Then
                 lst_Json.Items.Add(New JSONFile(path))
             ElseIf path.ToLower.EndsWith(".zip") Then
