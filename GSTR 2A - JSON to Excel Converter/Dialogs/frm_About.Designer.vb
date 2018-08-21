@@ -393,7 +393,7 @@ Partial Class frm_About
         Me.lbl_License.Size = New System.Drawing.Size(373, 25)
         Me.lbl_License.TabIndex = 18
         Me.lbl_License.TabStop = True
-        Me.lbl_License.Text = "The GNU General Public License v3.0"
+        Me.lbl_License.Text = "Apache License 2.0"
         Me.lbl_License.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
         'Label6
@@ -459,7 +459,7 @@ Partial Class frm_About
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(509, 29)
         Me.Label3.TabIndex = 5
-        Me.Label3.Text = "Note : This application was a part of my automation tools project. For more tools" & _
+        Me.Label3.Text = "Note : This application was a part of my automation tools project. For more tools" &
     "/info visit my site or github page."
         '
         'Label20
