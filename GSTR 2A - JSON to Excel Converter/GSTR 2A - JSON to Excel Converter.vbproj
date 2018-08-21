@@ -168,16 +168,6 @@
     <Content Include="icon.ico" />
     <None Include="Resources\splash.jpg" />
     <None Include="Resources\icon.png" />
-    <None Include="Resources\info.ico" />
-    <None Include="Resources\combine.ico" />
-    <None Include="Resources\process.ico" />
-    <None Include="Resources\export_pdf.ico" />
-    <None Include="Resources\export_word.ico" />
-    <None Include="Resources\export_others.ico" />
-    <None Include="Resources\export_excel.ico" />
-    <None Include="Resources\remove.ico" />
-    <None Include="Resources\clear.ico" />
-    <None Include="Resources\add.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <PropertyGroup>
