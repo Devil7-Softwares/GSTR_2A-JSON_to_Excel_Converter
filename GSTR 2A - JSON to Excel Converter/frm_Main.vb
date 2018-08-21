@@ -416,6 +416,10 @@ Public Class frm_Main
     End Sub
 
     Private Sub frm_Main_Load(sender As System.Object, e As System.EventArgs) Handles MyBase.Load
+        AddHandler LookAndFeel.StyleChanged, (Sub()
+                                                  Me.lst_Json.BackColor = RibbonControl.BackColor
+                                                  Me.lst_Json.ForeColor = RibbonControl.ForeColor
+                                              End Sub)
         If My.Settings.Skin <> "" Then
             Try
                 Theme.LookAndFeel.SkinName = My.Settings.Skin
