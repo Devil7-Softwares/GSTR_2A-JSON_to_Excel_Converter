@@ -36,7 +36,7 @@ Namespace Classes
             Const PeHeaderOffset As Integer = 60
             Const LinkerTimestampOffset As Integer = 8
             Dim b(2047) As Byte
-            Dim s As IO.Stream
+            Dim s As IO.Stream = Nothing
             Try
                 s = New IO.FileStream(Application.ExecutablePath, IO.FileMode.Open, IO.FileAccess.Read)
                 s.Read(b, 0, 2048)
