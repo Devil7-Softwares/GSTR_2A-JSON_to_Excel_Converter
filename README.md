@@ -26,3 +26,5 @@ This tool was a part of my automation projects (well... we can call it laziness)
 ![WithCombinedMode](screenshots/ScreenShot_4.png)
 
 ![WithoutCombinedMode](screenshots/ScreenShot_5.png)
+
+![Feedback](screenshots/ScreenShot_6.png)
