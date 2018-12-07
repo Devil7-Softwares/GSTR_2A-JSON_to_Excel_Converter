@@ -23,6 +23,7 @@ Imports DevExpress.Spreadsheet
 Imports Ionic.Zip
 Imports Devil7.Automation.Converter.JSON2Excel.Classes.JSON
 Imports Devil7.Automation.Converter.JSON2Excel.Classes
+Imports DevExpress.XtraBars
 
 Public Class frm_Main
 
@@ -165,8 +166,8 @@ Public Class frm_Main
         End Try
     End Sub
     Private Sub ShowError(ByVal Message As String, ByVal Exception As Exception)
-        MsgBox(Message & vbNewLine & vbNewLine & vbNewLine & vbNewLine & _
-               "Additional Information:" & vbNewLine & vbNewLine & _
+        MsgBox(Message & vbNewLine & vbNewLine & vbNewLine & vbNewLine &
+               "Additional Information:" & vbNewLine & vbNewLine &
                Exception.Message & Exception.StackTrace, MsgBoxStyle.Exclamation + MsgBoxStyle.OkOnly, "Error")
     End Sub
     Private Function ReadData(ByVal Data As Byte(), ByRef Period As String) As List(Of GSTR2AEntry)
@@ -446,6 +447,10 @@ Public Class frm_Main
         Me.Focus()
     End Sub
 
+    Private Sub btn_ExcelHelper_ItemClick(sender As Object, e As ItemClickEventArgs) Handles btn_ExcelHelper.ItemClick
+        Dim D As New frm_ExcelHelper
+        D.ShowDialog()
+    End Sub
 End Class
 Public Enum ExportFormat
     Word

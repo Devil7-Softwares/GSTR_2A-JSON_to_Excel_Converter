@@ -470,6 +470,44 @@
         PGcgLz4NCiAgPGcgLz4NCiAgPGcgLz4NCjwvc3ZnPgs=
 </value>
   </data>
+  <data name="btn_ExcelHelper.ImageOptions.SvgImage" type="DevExpress.Utils.Svg.SvgImage, DevExpress.Data.v18.1" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        AAEAAAD/////AQAAAAAAAAAMAgAAAFlEZXZFeHByZXNzLkRhdGEudjE4LjEsIFZlcnNpb249MTguMS40
+        LjAsIEN1bHR1cmU9bmV1dHJhbCwgUHVibGljS2V5VG9rZW49Yjg4ZDE3NTRkNzAwZTQ5YQUBAAAAHURl
+        dkV4cHJlc3MuVXRpbHMuU3ZnLlN2Z0ltYWdlAQAAAAREYXRhBwICAAAACQMAAAAPAwAAAIwGAAAC77u/
+        PD94bWwgdmVyc2lvbj0nMS4wJyBlbmNvZGluZz0nVVRGLTgnPz4NCjxzdmcgd2lkdGg9IjMycHgiIGhl
+        aWdodD0iMzJweCIgdmlld0JveD0iMCAwIDMyIDMyIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAw
+        MC9zdmciPg0KICA8Zz4NCiAgICA8cGF0aCBkPSJNMjQuNjU3MDU5LDIxLjY0MjAyTDI0LjY1NzA1OSwy
+        NC43OTMwMTkgMjkuODU5MTAyLDI0Ljc5MzAxOSAyOS44NTkxMDIsMjEuNjQyMDJ6IE0yNC42NTcwNTks
+        MTcuNDkxMDIxTDI0LjY1NzA1OSwyMC42NDIwMiAyOS44NTkxMDIsMjAuNjQyMDIgMjkuODU5MTAyLDE3
+        LjQ5MTAyMXogTTI0LjY1NzA1OSwxMy4zNDAwMjFMMjQuNjU3MDU5LDE2LjQ5MTAyMSAyOS44NTkxMDIs
+        MTYuNDkxMDIxIDI5Ljg1OTEwMiwxMy4zNDAwMjF6IE0xMy4wNTQwNTYsOS4zMTMwNDUyTDEwLjkzNjAw
+        OCw5LjQyMTk5MyA5LjQwMzA0NDcsMTMuMzM5MDQ0IDcuOTAyMDAxOSw5Ljc4Mzk5MjUgNS44MDIwMjAx
+        LDkuNzgzOTkyNSA4LjAwMzAxNTUsMTQuOTE1MDMzIDUuODA0MDM0MiwxOS45MTAwMjUgNy42NjkwMzAy
+        LDIwLjA1ODAzNiA5LjIwMzAzMTUsMTYuMzkwOTg0IDEwLjgwMzAxMiwyMC4zNTgwMjMgMTAuODA0MDQ5
+        LDIwLjM1Njk4NiAxMy4yNzIwMTQsMjAuMzU2OTg2IDEwLjUzNzAyLDE0LjY4OTk5NnogTTI0LjY1NzA1
+        OSw5LjE4ODA0NTJMMjQuNjU3MDU5LDEyLjMzOTA0NSAyOS44NTkxMDIsMTIuMzM5MDQ1IDI5Ljg1OTEw
+        Miw5LjE4ODA0NTJ6IE0yNC42NTcwNTksNS4wMzcwNDYxTDI0LjY1NzA1OSw4LjE4ODA0NTIgMjkuODU5
+        MTAyLDguMTg4MDQ1MiAyOS44NTkxMDIsNS4wMzcwNDYxeiBNMzEuMDMxNDEyLDMuNDM1NDcxN0MzMS4x
+        ODI3ODMsMy40MzU5MDUyLDMxLjk5MDA4OSwzLjQ5NzIyNSwzMS45OTAwODksNC43NTYwNDAzTDMxLjk5
+        MDA4OSwyNS42MDIwNCAzMS45ODkxMTMsMjUuNjAyMDRDMzEuOTg5MTEzLDI1LjYwMjA0LDMyLjE3NDEx
+        LDI2LjU3NTAwMSwzMC45NDYwNzksMjYuNjQ1MDA5TDE5LjA3MjA4MSwyNi42NDUwMDkgMTkuMDcyMDgx
+        LDI0LjY0NTAwOSAyMy42MDYwOTEsMjQuNjQ1MDA5IDIzLjYwNjA5MSwyMS40OTQwMSAxOS4wNzIwODEs
+        MjEuNDk0MDEgMTkuMDcyMDgxLDIwLjU0MzAyMSAyMy42MDYwOTEsMjAuNTQzMDIxIDIzLjYwNjA5MSwx
+        Ny4zOTIwMjIgMTkuMDcyMDgxLDE3LjM5MjAyMiAxOS4wNzIwODEsMTYuNDQxMDMzIDIzLjYwNjA5MSwx
+        Ni40NDEwMzMgMjMuNjA2MDkxLDEzLjI5MDAzMyAxOS4wNzIwODEsMTMuMjkwMDMzIDE5LjA3MjA4MSwx
+        Mi4zNDAwMjIgMjMuNjA2MDkxLDEyLjM0MDAyMiAyMy42MDYwOTEsOS4xODkwMjE4IDE5LjA3MjA4MSw5
+        LjE4OTAyMTggMTkuMDcyMDgxLDguMjM5MDA5NiAyMy42MDYwOTEsOC4yMzkwMDk2IDIzLjYwNjA5MSw1
+        LjA4NzAzMzkgMTkuMDcyMDgxLDUuMDg3MDMzOSAxOS4wNzIwODEsMy40MzYwMzM0IDMxLjAwNzExNCwz
+        LjQzNjAzMzRDMzEuMDA3MTE0LDMuNDM2MDMzNCwzMS4wMTU3NTUsMy40MzU0MjY3LDMxLjAzMTQxMiwz
+        LjQzNTQ3MTd6IE0xOC40MDUwODcsMEwxOC40MDUwODcsMzAuNDc2MDAxIDAsMjcuMjc1MDE0IDAsMy4w
+        NjcwMTUxeiIgZmlsbD0iIzAwMDAwMCIgaWQ9InBhdGgxIiB0cmFuc2Zvcm09InJvdGF0ZSgwLCAxNiwg
+        MTYpIHRyYW5zbGF0ZSgwLCAwLjc2MTUpIHNjYWxlKDEpIiAvPg0KICA8L2c+DQo8L3N2Zz4L
+</value>
+  </data>
+  <data name="ToolTipItem10.Text" xml:space="preserve">
+    <value>Downloading GSTR 2A in Excel file format is better in some ways... But some don't want the "Total" row and empty rows in between invoice entries. This tool helps to get rid of those unwanted rows from Excel file.</value>
+  </data>
   <metadata name="OpenJSONFiles.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>262, 17</value>
   </metadata>
