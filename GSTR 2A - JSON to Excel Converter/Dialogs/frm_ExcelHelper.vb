@@ -36,7 +36,7 @@ Public Class frm_ExcelHelper
     Private Sub AddExcelFiles(ByVal Files As String())
         For Each path As String In Files
             If path.ToLower.EndsWith(".xls") Or path.ToLower.EndsWith(".xlsx") Then
-                lst_Excel.Items.Add(path)
+                If Not lst_Excel.Items.Contains(path) Then lst_Excel.Items.Add(path)
             Else
                 MsgBox(String.Format("Unknown Format for file : '{0}'", path), MsgBoxStyle.Exclamation + MsgBoxStyle.OkOnly, "Warning")
             End If
