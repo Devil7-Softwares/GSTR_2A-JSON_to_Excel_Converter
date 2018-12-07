@@ -59,7 +59,6 @@ Partial Class frm_ExcelHelper
         Me.ProgressPanel_Loading.Appearance.Options.UseBackColor = True
         Me.ProgressPanel_Loading.BarAnimationElementThickness = 2
         Me.ProgressPanel_Loading.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple
-        Me.ProgressPanel_Loading.ContentAlignment = System.Drawing.ContentAlignment.MiddleCenter
         Me.ProgressPanel_Loading.Description = "Loading..."
         Me.ProgressPanel_Loading.Location = New System.Drawing.Point(102, 163)
         Me.ProgressPanel_Loading.Name = "ProgressPanel_Loading"
