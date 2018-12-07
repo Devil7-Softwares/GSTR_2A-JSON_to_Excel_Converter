@@ -20,9 +20,12 @@
 
 Namespace Classes.JSON
     Public Class Returns
+        Public Property FileIndex As Integer
+        Public Property TotalFiles As Integer
         Public Property GSTIN As String
         Public Property FingerPrint As String
         Public Property B2BEntries As New List(Of B2BEntry)
+        Public Property B2BAEntries As New List(Of B2BAEntry)
         Public Property Period As String
     End Class
 End Namespace

@@ -110,9 +110,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ApplicationEvents.vb" />
+    <Compile Include="Classess\EntryType.vb" />
     <Compile Include="Classess\FeedBack.vb" />
     <Compile Include="Classess\GSTR2AEntry.vb" />
     <Compile Include="Classess\JSON\B2BEntry.vb" />
+    <Compile Include="Classess\JSON\B2BAEntry.vb" />
     <Compile Include="Classess\JSON\Invoice.vb" />
     <Compile Include="Classess\JSON\Item.vb" />
     <Compile Include="Classess\JSON\ItemDetails.vb" />

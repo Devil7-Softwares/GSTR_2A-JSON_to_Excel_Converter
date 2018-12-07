@@ -176,7 +176,14 @@ Public Class frm_Main
         For Each i As B2BEntry In Returns.B2BEntries
             For Each Invoice As Invoice In i.Invoices
                 For Each item As Item In Invoice.Items
-                    R.Add(New GSTR2AEntry(i.GSTIN, Invoice.InvoiceNumber, Invoice.InvoiceDate, CDbl(Invoice.Value), CDbl(item.ItemDetail.TaxableValue), CDbl(item.ItemDetail.IGST), CDbl(item.ItemDetail.CGST), CDbl(item.ItemDetail.SGST), CDbl(item.ItemDetail.CESS)))
+                    R.Add(New GSTR2AEntry(i.GSTIN, Invoice.InvoiceNumber, Invoice.InvoiceDate, CDbl(Invoice.Value), CDbl(item.ItemDetail.TaxableValue), CDbl(item.ItemDetail.IGST), CDbl(item.ItemDetail.CGST), CDbl(item.ItemDetail.SGST), CDbl(item.ItemDetail.CESS), EntryType.B2B))
+                Next
+            Next
+        Next
+        For Each i As B2BAEntry In Returns.B2BAEntries
+            For Each Invoice As Invoice In i.Invoices
+                For Each item As Item In Invoice.Items
+                    R.Add(New GSTR2AEntry(i.GSTIN, Invoice.InvoiceNumber, Invoice.InvoiceDate, CDbl(Invoice.Value), CDbl(item.ItemDetail.TaxableValue), CDbl(item.ItemDetail.IGST), CDbl(item.ItemDetail.CGST), CDbl(item.ItemDetail.SGST), CDbl(item.ItemDetail.CESS), EntryType.B2BA))
                 Next
             Next
         Next

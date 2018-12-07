@@ -19,7 +19,9 @@
 '=========================================================================='
 
 Namespace Classes.JSON
-    Public Class B2BEntry : Inherits B2BAEntry
-        Public Property Name As String
+    Public Class B2BAEntry
+        Public Property GSTIN As String
+        Public Property cfs As String
+        Public Property Invoices As New List(Of Invoice)
     End Class
 End Namespace

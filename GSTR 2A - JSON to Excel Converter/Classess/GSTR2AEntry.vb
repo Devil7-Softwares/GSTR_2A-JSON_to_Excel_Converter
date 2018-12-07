@@ -29,7 +29,8 @@ Namespace Classes
         Property CentralTax As Double = 0
         Property StateTax As Double = 0
         Property CESS As Double = 0
-        Sub New(ByVal SupplierGSTIN As String, ByVal InvoiceNo As String, ByVal InvoiceDate As Date, ByVal TotalInvoiceValue As Double, ByVal TotalTaxableValue As Double, ByVal IntegratedTax As Double, ByVal CentralTax As Double, ByVal StateTax As Double, ByVal CESS As Double)
+        Property Type As EntryType
+        Sub New(ByVal SupplierGSTIN As String, ByVal InvoiceNo As String, ByVal InvoiceDate As Date, ByVal TotalInvoiceValue As Double, ByVal TotalTaxableValue As Double, ByVal IntegratedTax As Double, ByVal CentralTax As Double, ByVal StateTax As Double, ByVal CESS As Double, ByVal Type As EntryType)
             Me.SupplierGSTIN = SupplierGSTIN
             Me.InvoiceNo = InvoiceNo
             Me.InvoiceDate = InvoiceDate
@@ -39,6 +40,7 @@ Namespace Classes
             Me.CentralTax = CentralTax
             Me.StateTax = StateTax
             Me.CESS = CESS
+            Me.Type = Type
         End Sub
     End Class
 End Namespace
